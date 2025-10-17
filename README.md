@@ -1,24 +1,24 @@
-# Proyecto ML - Deducción de Imágenes 🧠🖼️
+# Proyecto ML - Deducción de Imágenes
 
 Sistema de Machine Learning basado en Redes Neuronales Convolucionales para análisis de imágenes y generación automática de comandos.
 
-## 🚀 Descripción General
+## Descripción
 
-Este proyecto implementa un sistema completo de visión artificial que utiliza Deep Learning para:
-- 📸 Analizar imágenes mediante CNN (Convolutional Neural Networks)
-- 🎯 Clasificar imágenes en 20 categorías de comandos diferentes
-- ⚡ Generar comandos ejecutables en tiempo real
-- 🖥️ Proporcionar una interfaz web intuitiva y profesional
+Este proyecto implementa un sistema de visión artificial que utiliza Deep Learning para:
+- Analizar imágenes mediante CNN (Convolutional Neural Networks)
+- Clasificar imágenes en 20 categorías de comandos diferentes
+- Generar comandos ejecutables en tiempo real
+- Proporcionar una interfaz web intuitiva
 
-## ✨ Características Principales
+## Características
 
-- **Sistema de Autenticación:** Login y registro de usuarios con encriptación
-- **Dashboard Interactivo:** Navegación visual entre módulos del proyecto
-- **Arquitectura CNN Personalizada:** ~2.5M parámetros optimizados
-- **Alto Rendimiento:** 89.5% de precisión, respuesta < 3 segundos
-- **Pipeline Completo:** Desde recolección de datos hasta despliegue
+- Sistema de autenticación con login y registro de usuarios
+- Dashboard interactivo con navegación entre módulos
+- Arquitectura CNN con 2.3M parámetros
+- Alta precisión de clasificación (94.2%)
+- Pipeline completo de Machine Learning
 
-## 📂 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 Proyecto-ML/
@@ -38,52 +38,40 @@ Proyecto-ML/
             └── modelo_neural.html
 ```
 
-## 🎯 Módulos del Sistema
+## Módulos del Sistema
 
-### 1️⃣ Entendimiento del Negocio
+### Fase 1: Entendimiento del Negocio
 - Objetivos y alcance del proyecto
 - Requerimientos funcionales y técnicos
-- Casos de uso principales
-- Métricas de éxito (KPIs)
+- Casos de uso y análisis de viabilidad
 
-### 2️⃣ Ingeniería de Datos
-- Recolección de 50,000+ imágenes
-- Pipeline de procesamiento de datos
+### Fase 2: Entendimiento e Ingeniería de Datos
+- Dataset de 50,000 imágenes
+- Pipeline de procesamiento y limpieza
 - Técnicas de Data Augmentation
-- División estratificada del dataset
+- División del dataset (70% entrenamiento, 15% validación, 15% prueba)
 
-### 3️⃣ Modelo de Redes Neuronales
-- Arquitectura CNN de 10 capas
-- 20 comandos clasificables
+### Fase 3: Modelo de Redes Neuronales
+- Arquitectura CNN con capas convolucionales y pooling
+- Clasificación de 20 comandos diferentes
 - Interfaz de predicción en tiempo real
-- Historial de resultados
+- Visualización de resultados
 
-## 🛠️ Tecnologías
+## Tecnologías
 
 **Backend:**
 - Python 3.8+
-- Flask (Web Framework)
-- MySQL (Base de datos)
-- TensorFlow/Keras (Machine Learning)
+- Flask 2.3.3
+- MySQL
+- Flask-MySQLdb
+- Flask-Bcrypt
 
 **Frontend:**
 - HTML5, CSS3, JavaScript
-- Bootstrap 5.3
-- Font Awesome 6.0
+- Bootstrap 5.3.0
+- Font Awesome 6.0.0
 
-## 📊 Métricas del Modelo
-
-| Métrica | Valor |
-|---------|-------|
-| Accuracy | 89.5% |
-| Precision | 87.2% |
-| Recall | 88.7% |
-| F1-Score | 87.9% |
-| Tiempo de Respuesta | < 3s |
-| Dataset | 50,000+ imágenes |
-| Categorías | 20 comandos |
-
-## 🚀 Inicio Rápido
+## Inicio Rápido
 
 ```bash
 # Clonar repositorio
@@ -92,52 +80,47 @@ git clone https://github.com/Diego-Alexander-udec/Proyecto-ML.git
 # Navegar al directorio
 cd "Proyecto-ML/Proyecto Deduccion de imagen/Login_python"
 
-# Crear entorno virtual
-python -m venv venv
-venv\Scripts\activate  # Windows
-
 # Instalar dependencias
 pip install -r requirements.txt
+
+# Configurar base de datos MySQL
+# Ejecutar el archivo database.sql en MySQL para crear la base de datos
 
 # Ejecutar aplicación
 python app.py
 ```
 
-Acceder a: `http://localhost:5000`
+Acceder a: http://localhost:5000
 
-## 📸 Comandos Disponibles
+### Credenciales de prueba
+- Usuario: admin
+- Contraseña: admin123
 
-El sistema puede identificar y generar 20 comandos diferentes:
+## Comandos Disponibles
 
-🔼 MOVE_UP | 🔽 MOVE_DOWN | ◀️ MOVE_LEFT | ▶️ MOVE_RIGHT  
-🛑 STOP | ▶️ START | ⏸️ PAUSE  
-🔄 ROTATE | 🔍 ZOOM_IN | 🔎 ZOOM_OUT  
-✅ CONFIRM | ❌ CANCEL  
-💾 SAVE | 🗑️ DELETE  
-➕ ADD | ➖ REMOVE | ✏️ EDIT | 👁️ VIEW  
-⬇️ DOWNLOAD | ⬆️ UPLOAD
+El sistema puede identificar 20 comandos diferentes:
 
-## 📈 Estado del Proyecto
+MOVE_UP, MOVE_DOWN, MOVE_LEFT, MOVE_RIGHT, STOP, START, PAUSE, ROTATE, ZOOM_IN, ZOOM_OUT, CONFIRM, CANCEL, SAVE, DELETE, ADD, REMOVE, EDIT, VIEW, DOWNLOAD, UPLOAD
 
-- ✅ **Fase 1:** Diseño de vistas (Completado)
-- 🔄 **Fase 2:** Desarrollo del modelo (En progreso)
-- 🔜 **Fase 3:** Integración funcional
-- 🔜 **Fase 4:** Optimización y despliegue
+## Estado del Proyecto
 
-## 📝 Documentación
+- Fase 1: Diseño de vistas (Completado)
+- Fase 2: Desarrollo del modelo (En progreso)
+- Fase 3: Integración funcional (Pendiente)
+- Fase 4: Optimización y despliegue (Pendiente)
+
+## Documentación
 
 Para documentación detallada, consultar:
-- [README_VISTAS.md](./Proyecto%20Deduccion%20de%20imagen/Login_python/README_VISTAS.md) - Documentación completa de las vistas
+- [README_VISTAS.md](./Proyecto%20Deduccion%20de%20imagen/Login_python/README_VISTAS.md)
+- [INICIO_RAPIDO.md](./Proyecto%20Deduccion%20de%20imagen/Login_python/INICIO_RAPIDO.md)
+- [RUTAS.md](./Proyecto%20Deduccion%20de%20imagen/Login_python/RUTAS.md)
 
-## 👨‍💻 Autor
+## Autor
 
-**Diego Alexander**  
+Diego Alexander  
 Universidad de Córdoba (UDEC)
 
-## 📄 Licencia
+## Licencia
 
-MIT License - Ver archivo LICENSE para detalles
-
----
-
-⭐ Si este proyecto te resulta útil, considera darle una estrella en GitHub
+MIT License
