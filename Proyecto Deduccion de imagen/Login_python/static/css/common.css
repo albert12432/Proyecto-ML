@@ -1,0 +1,146 @@
+/* ============================================
+   ESTILOS COMUNES PARA TODAS LAS PÁGINAS
+   ============================================ */
+
+/* Barra de Navegación */
+.navbar-custom {
+    background-color: #007bff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+    color: white !important;
+    transition: opacity 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover {
+    opacity: 0.8;
+}
+
+.navbar-custom .nav-link.active {
+    font-weight: 600;
+    border-bottom: 2px solid white;
+}
+
+/* Contenedor Principal */
+.main-container {
+    min-height: calc(100vh - 56px);
+    background-color: #f8f9fa;
+}
+
+/* Tarjetas Personalizadas */
+.card-custom {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.card-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon Box */
+.icon-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.icon-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Colores de Icon Box */
+.icon-box-purple {
+    background-color: #e0d4f7;
+    color: #667eea;
+}
+
+.icon-box-blue {
+    background-color: #d4e4f7;
+    color: #4a90e2;
+}
+
+.icon-box-green {
+    background-color: #d4f7e0;
+    color: #4ae290;
+}
+
+.icon-box-orange {
+    background-color: #f7e4d4;
+    color: #e2904a;
+}
+
+.icon-box-teal {
+    background-color: #d4f7f0;
+    color: #11998e;
+}
+
+.icon-box-cyan {
+    background-color: #d4eff7;
+    color: #1199e8;
+}
+
+.icon-box-lime {
+    background-color: #e8f7d4;
+    color: #7de811;
+}
+
+.icon-box-pink {
+    background-color: #ffe0f0;
+    color: #f093fb;
+}
+
+.icon-box-red {
+    background-color: #ffe0e0;
+    color: #f5576c;
+}
+
+.icon-box-indigo {
+    background-color: #e0e8ff;
+    color: #6574cd;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 767.98px) {
+    .icon-box {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .icon-circle {
+        width: 80px;
+        height: 80px;
+    }
+}

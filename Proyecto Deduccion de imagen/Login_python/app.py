@@ -73,6 +73,27 @@ def home():
     response = make_response(render_template('home.html'))
     return add_no_cache_headers(response)  # Aplica las cabeceras de no caché
 
+@app.route('/entendimiento-negocio')
+def entendimiento_negocio():
+    if 'username' not in session:
+        return redirect(url_for('login'))  # Redirige a login si no está autenticado
+    response = make_response(render_template('entendimiento_negocio.html'))
+    return add_no_cache_headers(response)  # Aplica las cabeceras de no caché
+
+@app.route('/ingenieria-datos')
+def ingenieria_datos():
+    if 'username' not in session:
+        return redirect(url_for('login'))  # Redirige a login si no está autenticado
+    response = make_response(render_template('ingenieria_datos.html'))
+    return add_no_cache_headers(response)  # Aplica las cabeceras de no caché
+
+@app.route('/modelo-neural')
+def modelo_neural():
+    if 'username' not in session:
+        return redirect(url_for('login'))  # Redirige a login si no está autenticado
+    response = make_response(render_template('modelo_neural.html'))
+    return add_no_cache_headers(response)  # Aplica las cabeceras de no caché
+
 @app.route('/logout')
 def logout():
     session.pop('username', None)

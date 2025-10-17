@@ -3,36 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Home - Proyecto ML</title>
+    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .navbar-custom {
-            background-color: #007bff;
-        }
-        .navbar-custom .navbar-brand, .navbar-custom .nav-link {
-            color: white !important;
-        }
-        .welcome-message {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Estilos Personalizados -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 </head>
 <body>
     <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Login con python   </a>
+            <a class="navbar-brand" href="{{ url_for('home') }}">
+                <i class="fas fa-brain me-2"></i>Proyecto ML - Deducción de Imágenes
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('logout') }}">Cerrar sesión</a>
+                        <a class="nav-link active" href="{{ url_for('home') }}">
+                            <i class="fas fa-home me-1"></i>Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('entendimiento_negocio') }}">
+                            <i class="fas fa-briefcase me-1"></i>Negocio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('ingenieria_datos') }}">
+                            <i class="fas fa-database me-1"></i>Datos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('modelo_neural') }}">
+                            <i class="fas fa-project-diagram me-1"></i>Modelo
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('logout') }}">
+                            <i class="fas fa-sign-out-alt me-1"></i>Cerrar sesión
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -42,11 +60,205 @@
     <!-- Contenido principal -->
     <div class="container mt-5">
         <div class="row">
-            <!-- Columna izquierda -->
-            <div class="col-md-6">
-                <div class="welcome-message">
+            <!-- Mensaje de bienvenida -->
+            <div class="col-12 mb-4">
+                <div class="welcome-message text-center">
                     <h2>Bienvenido, <span class="text-primary">{{ session['username'] }}</span>!</h2>
-                    <p class="lead">Has iniciado sesión correctamente.</p>
+                    <p class="lead">Sistema de Deducción de Imágenes mediante Redes Neuronales</p>
+                    <p class="text-muted">Explora las diferentes fases del proyecto</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Credenciales de Prueba -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    <h5 class="alert-heading"><i class="fas fa-key me-2"></i>Credenciales de Prueba</h5>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <strong>Usuario:</strong> <code>admin</code>
+                        </div>
+                        <div class="col-md-6">
+                            <strong>Contraseña:</strong> <code>admin123</code>
+                        </div>
+                    </div>
+                    <small class="text-muted d-block mt-2">
+                        <i class="fas fa-info-circle me-1"></i>Si aún no tienes cuenta, regístrate usando estas credenciales o crea las tuyas propias.
+                    </small>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navegación por Pestañas -->
+        <ul class="nav nav-tabs nav-fill mb-4" id="projectTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="fase1-tab" data-bs-toggle="tab" data-bs-target="#fase1" type="button" role="tab" aria-controls="fase1" aria-selected="true">
+                    <i class="fas fa-briefcase me-2"></i>Fase 1: Entendimiento del Negocio
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="fase2-tab" data-bs-toggle="tab" data-bs-target="#fase2" type="button" role="tab" aria-controls="fase2" aria-selected="false">
+                    <i class="fas fa-database me-2"></i>Fase 2: Entendimiento e Ingeniería de Datos
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="fase3-tab" data-bs-toggle="tab" data-bs-target="#fase3" type="button" role="tab" aria-controls="fase3" aria-selected="false">
+                    <i class="fas fa-project-diagram me-2"></i>Fase 3: Modelo Neural
+                </button>
+            </li>
+        </ul>
+
+        <!-- Contenido de las Pestañas -->
+        <div class="tab-content" id="projectTabsContent">
+            <!-- Fase 1: Entendimiento del Negocio -->
+            <div class="tab-pane fade show active" id="fase1" role="tabpanel" aria-labelledby="fase1-tab">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card h-100 border-0 shadow-sm hover-card">
+                            <div class="card-body text-center p-4">
+                                <div class="icon-circle bg-primary bg-opacity-10 mx-auto mb-3">
+                                    <i class="fas fa-briefcase fa-3x text-primary"></i>
+                                </div>
+                                <h4 class="card-title">Entendimiento del Negocio</h4>
+                                <p class="card-text text-muted">
+                                    Objetivos del proyecto, requerimientos del cliente, casos de uso y análisis de viabilidad.
+                                </p>
+                                <div class="row mt-4">
+                                    <div class="col-md-4">
+                                        <div class="p-3">
+                                            <i class="fas fa-bullseye text-primary fa-2x mb-2"></i>
+                                            <h6>Objetivos</h6>
+                                            <p class="text-muted small">Metas del proyecto</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="p-3">
+                                            <i class="fas fa-users text-primary fa-2x mb-2"></i>
+                                            <h6>Stakeholders</h6>
+                                            <p class="text-muted small">Usuarios clave</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="p-3">
+                                            <i class="fas fa-chart-line text-primary fa-2x mb-2"></i>
+                                            <h6>KPIs</h6>
+                                            <p class="text-muted small">Métricas de éxito</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="{{ url_for('entendimiento_negocio') }}" class="btn btn-primary mt-4">
+                                    <i class="fas fa-arrow-right me-2"></i>Explorar Fase 1
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fase 2: Entendimiento e Ingeniería de Datos -->
+            <div class="tab-pane fade" id="fase2" role="tabpanel" aria-labelledby="fase2-tab">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card h-100 border-0 shadow-sm hover-card">
+                            <div class="card-body text-center p-4">
+                                <div class="icon-circle bg-success bg-opacity-10 mx-auto mb-3">
+                                    <i class="fas fa-database fa-3x text-success"></i>
+                                </div>
+                                <h4 class="card-title">Entendimiento e Ingeniería de Datos</h4>
+                                <p class="card-text text-muted">
+                                    Recolección, análisis, limpieza y preparación del dataset de imágenes.
+                                </p>
+                                <div class="row mt-4">
+                                    <div class="col-md-3">
+                                        <div class="p-3">
+                                            <i class="fas fa-images text-success fa-2x mb-2"></i>
+                                            <h6>Dataset</h6>
+                                            <p class="text-muted small">50,000 imágenes</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="p-3">
+                                            <i class="fas fa-tags text-success fa-2x mb-2"></i>
+                                            <h6>Categorías</h6>
+                                            <p class="text-muted small">20 comandos</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="p-3">
+                                            <i class="fas fa-check-circle text-success fa-2x mb-2"></i>
+                                            <h6>Calidad</h6>
+                                            <p class="text-muted small">92% validados</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="p-3">
+                                            <i class="fas fa-balance-scale text-success fa-2x mb-2"></i>
+                                            <h6>Balance</h6>
+                                            <p class="text-muted small">Uniforme</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="{{ url_for('ingenieria_datos') }}" class="btn btn-success mt-4">
+                                    <i class="fas fa-arrow-right me-2"></i>Explorar Fase 2
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fase 3: Modelo Neural -->
+            <div class="tab-pane fade" id="fase3" role="tabpanel" aria-labelledby="fase3-tab">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card h-100 border-0 shadow-sm hover-card">
+                            <div class="card-body text-center p-4">
+                                <div class="icon-circle bg-danger bg-opacity-10 mx-auto mb-3">
+                                    <i class="fas fa-project-diagram fa-3x text-danger"></i>
+                                </div>
+                                <h4 class="card-title">Modelo de Redes Neuronales</h4>
+                                <p class="card-text text-muted">
+                                    Arquitectura CNN para clasificación y deducción de comandos desde imágenes.
+                                </p>
+                                <div class="row mt-4">
+                                    <div class="col-md-3">
+                                        <div class="p-3">
+                                            <i class="fas fa-layer-group text-danger fa-2x mb-2"></i>
+                                            <h6>Arquitectura</h6>
+                                            <p class="text-muted small">CNN Profunda</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="p-3">
+                                            <i class="fas fa-percentage text-danger fa-2x mb-2"></i>
+                                            <h6>Precisión</h6>
+                                            <p class="text-muted small">94.2%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="p-3">
+                                            <i class="fas fa-clock text-danger fa-2x mb-2"></i>
+                                            <h6>Tiempo</h6>
+                                            <p class="text-muted small">~50ms</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="p-3">
+                                            <i class="fas fa-brain text-danger fa-2x mb-2"></i>
+                                            <h6>Parámetros</h6>
+                                            <p class="text-muted small">2.3M</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="{{ url_for('modelo_neural') }}" class="btn btn-danger mt-4">
+                                    <i class="fas fa-arrow-right me-2"></i>Explorar Fase 3
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -54,5 +266,9 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Scripts Personalizados -->
+    <script src="{{ url_for('static', filename='js/common.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
 </body>
 </html>

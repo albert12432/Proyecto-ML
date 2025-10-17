@@ -1,0 +1,42 @@
+/* ============================================
+   ESTILOS ESPECÍFICOS PARA HOME
+   ============================================ */
+
+/* Mensaje de Bienvenida */
+.welcome-message {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Tarjetas con Hover Effect */
+.hover-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.hover-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Botones de las tarjetas */
+.hover-card .btn {
+    transition: all 0.3s ease;
+}
+
+.hover-card:hover .btn {
+    transform: scale(1.05);
+}
+
+/* Estadísticas */
+.stats-section h3 {
+    color: #007bff;
+    font-weight: 600;
+}
+
+.stats-section p {
+    color: #6c757d;
+    font-size: 0.875rem;
+}

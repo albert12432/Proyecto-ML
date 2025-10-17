@@ -1,0 +1,44 @@
+/* ============================================
+   ESTILOS PARA ENTENDIMIENTO DEL NEGOCIO
+   ============================================ */
+
+/* Header de Sección */
+.section-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section-header h1 {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    margin-bottom: 0;
+    opacity: 0.95;
+}
+
+/* Listas con Iconos */
+.list-unstyled li {
+    padding: 8px 0;
+}
+
+/* Tarjetas de Casos de Uso */
+.card.bg-light {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.card.bg-light:hover {
+    border-color: #667eea;
+    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.2);
+}
+
+/* Métricas de Éxito */
+.display-6 {
+    font-weight: 700;
+}
