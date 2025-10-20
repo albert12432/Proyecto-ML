@@ -20,7 +20,7 @@
     <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ url_for('home') }}">
-                <i class="fas fa-brain me-2"></i>Proyecto ML - Deducción de Imágenes
+                <i class="fas fa-hands me-2"></i>Proyecto ML - Reconocimiento de Señas
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -62,7 +62,7 @@
         <!-- Encabezado de la sección -->
         <div class="section-header">
             <h1><i class="fas fa-database me-3"></i>Entendimiento de Datos e Ingeniería de Datos</h1>
-            <p class="mb-0">Análisis, procesamiento y preparación de datos para el modelo de redes neuronales</p>
+            <p class="mb-0">Recolección y preparación del dataset de imágenes de lenguaje de señas</p>
         </div>
 
         <!-- Recolección de Datos -->
@@ -71,25 +71,25 @@
                 <div class="card card-custom">
                     <div class="card-body p-4">
                         <div class="icon-box icon-box-teal">
-                            <i class="fas fa-download"></i>
+                            <i class="fas fa-hand-rock"></i>
                         </div>
                         <h3 class="card-title">Fuentes de Datos</h3>
                         <div class="row mt-3">
                             <div class="col-md-3 mb-3">
                                 <div class="card bg-light text-center h-100">
                                     <div class="card-body">
-                                        <i class="fas fa-camera fa-3x text-primary mb-3"></i>
-                                        <h5>Imágenes Propias</h5>
-                                        <p class="small text-muted">Dataset generado internamente</p>
+                                        <i class="fas fa-video fa-3x text-primary mb-3"></i>
+                                        <h5>Captura Webcam</h5>
+                                        <p class="small text-muted">Imágenes desde cámara web</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-3 mb-3">
                                 <div class="card bg-light text-center h-100">
                                     <div class="card-body">
-                                        <i class="fas fa-cloud fa-3x text-success mb-3"></i>
+                                        <i class="fas fa-database fa-3x text-success mb-3"></i>
                                         <h5>Datasets Públicos</h5>
-                                        <p class="small text-muted">ImageNet, COCO, etc.</p>
+                                        <p class="small text-muted">ASL Alphabet, Sign Language MNIST</p>
                                     </div>
                                 </div>
                             </div>
@@ -97,17 +97,17 @@
                                 <div class="card bg-light text-center h-100">
                                     <div class="card-body">
                                         <i class="fas fa-users fa-3x text-warning mb-3"></i>
-                                        <h5>Contribuciones</h5>
-                                        <p class="small text-muted">Datos de usuarios y colaboradores</p>
+                                        <h5>Colaboradores</h5>
+                                        <p class="small text-muted">Voluntarios con señas auténticas</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-3 mb-3">
                                 <div class="card bg-light text-center h-100">
                                     <div class="card-body">
-                                        <i class="fas fa-robot fa-3x text-info mb-3"></i>
+                                        <i class="fas fa-magic fa-3x text-info mb-3"></i>
                                         <h5>Data Augmentation</h5>
-                                        <p class="small text-muted">Generación sintética</p>
+                                        <p class="small text-muted">Rotación, zoom, flip</p>
                                     </div>
                                 </div>
                             </div>
@@ -216,35 +216,35 @@
                         
                         <div class="mt-4">
                             <div class="pipeline-step">
-                                <h5><i class="fas fa-file-import text-primary me-2"></i>1. Carga de Datos</h5>
-                                <p class="mb-0 text-muted">Importación de imágenes desde diversas fuentes y formatos</p>
+                                <h5><i class="fas fa-hand-paper text-primary me-2"></i>1. Recolección de Gestos</h5>
+                                <p class="mb-0 text-muted">Captura de imágenes de gestos del lenguaje de señas (A-Z)</p>
                             </div>
 
                             <div class="pipeline-step">
                                 <h5><i class="fas fa-broom text-success me-2"></i>2. Limpieza de Datos</h5>
                                 <p class="mb-0 text-muted">
-                                    Eliminación de duplicados, imágenes corruptas y valores atípicos
+                                    Eliminación de imágenes borrosas, mal iluminadas o con gestos incorrectos
                                 </p>
                             </div>
 
                             <div class="pipeline-step">
                                 <h5><i class="fas fa-crop text-warning me-2"></i>3. Preprocesamiento</h5>
                                 <p class="mb-0 text-muted">
-                                    Redimensionamiento, normalización y ajuste de canales de color
+                                    Redimensionamiento a 128x128px, normalización y conversión a escala de grises
                                 </p>
                             </div>
 
                             <div class="pipeline-step">
-                                <h5><i class="fas fa-magic text-info me-2"></i>4. Aumento de Datos (Data Augmentation)</h5>
+                                <h5><i class="fas fa-magic text-info me-2"></i>4. Data Augmentation</h5>
                                 <p class="mb-0 text-muted">
-                                    Rotación, escalado, volteo y ajustes de brillo/contraste
+                                    Rotación, zoom, flip horizontal para aumentar la variabilidad del dataset
                                 </p>
                             </div>
 
                             <div class="pipeline-step">
-                                <h5><i class="fas fa-tag text-danger me-2"></i>5. Etiquetado y Categorización</h5>
+                                <h5><i class="fas fa-font text-danger me-2"></i>5. Etiquetado de Letras</h5>
                                 <p class="mb-0 text-muted">
-                                    Asignación de etiquetas y comandos asociados a cada imagen
+                                    Asignación de letras (A-Z) correspondientes a cada gesto de seña
                                 </p>
                             </div>
 
@@ -309,22 +309,22 @@
                             <div class="col-md-3 text-center mb-3">
                                 <div class="display-6 text-primary">70%</div>
                                 <p class="text-muted">Entrenamiento</p>
-                                <small>35,000 imágenes</small>
+                                <small>Dataset de training</small>
                             </div>
                             <div class="col-md-3 text-center mb-3">
                                 <div class="display-6 text-success">15%</div>
                                 <p class="text-muted">Validación</p>
-                                <small>7,500 imágenes</small>
+                                <small>Dataset de validation</small>
                             </div>
                             <div class="col-md-3 text-center mb-3">
                                 <div class="display-6 text-warning">15%</div>
                                 <p class="text-muted">Prueba</p>
-                                <small>7,500 imágenes</small>
+                                <small>Dataset de test</small>
                             </div>
                             <div class="col-md-3 text-center mb-3">
-                                <div class="display-6 text-info">20</div>
-                                <p class="text-muted">Categorías</p>
-                                <small>Comandos únicos</small>
+                                <div class="display-6 text-info">26</div>
+                                <p class="text-muted">Letras</p>
+                                <small>A-Z del alfabeto</small>
                             </div>
                         </div>
                     </div>

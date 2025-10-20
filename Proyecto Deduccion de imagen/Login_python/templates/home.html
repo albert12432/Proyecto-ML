@@ -20,7 +20,7 @@
     <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ url_for('home') }}">
-                <i class="fas fa-brain me-2"></i>Proyecto ML - Deducción de Imágenes
+                <i class="fas fa-hands me-2"></i>Proyecto ML - Reconocimiento de Señas
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -64,8 +64,8 @@
             <div class="col-12 mb-4">
                 <div class="welcome-message text-center">
                     <h2>Bienvenido, <span class="text-primary">{{ session['username'] }}</span>!</h2>
-                    <p class="lead">Sistema de Deducción de Imágenes mediante Redes Neuronales</p>
-                    <p class="text-muted">Explora las diferentes fases del proyecto</p>
+                    <p class="lead">Sistema de Reconocimiento de Lenguaje de Señas mediante Redes Neuronales</p>
+                    <p class="text-muted">Traduce gestos de señas a texto en tiempo real</p>
                 </div>
             </div>
         </div>
@@ -124,7 +124,7 @@
                                 </div>
                                 <h4 class="card-title">Entendimiento del Negocio</h4>
                                 <p class="card-text text-muted">
-                                    Objetivos del proyecto, requerimientos del cliente, casos de uso y análisis de viabilidad.
+                                    Sistema de traducción de lenguaje de señas a texto para mejorar la comunicación inclusiva y accesibilidad.
                                 </p>
                                 <div class="row mt-4">
                                     <div class="col-md-4">
@@ -169,21 +169,21 @@
                                 </div>
                                 <h4 class="card-title">Entendimiento e Ingeniería de Datos</h4>
                                 <p class="card-text text-muted">
-                                    Recolección, análisis, limpieza y preparación del dataset de imágenes.
+                                    Recolección y preparación del dataset de imágenes de gestos del lenguaje de señas para entrenamiento.
                                 </p>
                                 <div class="row mt-4">
                                     <div class="col-md-3">
                                         <div class="p-3">
-                                            <i class="fas fa-images text-success fa-2x mb-2"></i>
+                                            <i class="fas fa-hand-paper text-success fa-2x mb-2"></i>
                                             <h6>Dataset</h6>
-                                            <p class="text-muted small">50,000 imágenes</p>
+                                            <p class="text-muted small">Imágenes de señas</p>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="p-3">
-                                            <i class="fas fa-tags text-success fa-2x mb-2"></i>
-                                            <h6>Categorías</h6>
-                                            <p class="text-muted small">20 comandos</p>
+                                            <i class="fas fa-font text-success fa-2x mb-2"></i>
+                                            <h6>Letras</h6>
+                                            <p class="text-muted small">A-Z (26 clases)</p>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
@@ -221,28 +221,28 @@
                                 </div>
                                 <h4 class="card-title">Modelo de Redes Neuronales</h4>
                                 <p class="card-text text-muted">
-                                    Arquitectura CNN para clasificación y deducción de comandos desde imágenes.
+                                    CNN especializada en reconocimiento de gestos. Carga imágenes o captura en tiempo real desde webcam.
                                 </p>
                                 <div class="row mt-4">
                                     <div class="col-md-3">
                                         <div class="p-3">
-                                            <i class="fas fa-layer-group text-danger fa-2x mb-2"></i>
-                                            <h6>Arquitectura</h6>
-                                            <p class="text-muted small">CNN Profunda</p>
+                                            <i class="fas fa-camera text-danger fa-2x mb-2"></i>
+                                            <h6>Entrada</h6>
+                                            <p class="text-muted small">Imagen o Webcam</p>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="p-3">
-                                            <i class="fas fa-percentage text-danger fa-2x mb-2"></i>
-                                            <h6>Precisión</h6>
-                                            <p class="text-muted small">94.2%</p>
+                                            <i class="fas fa-spell-check text-danger fa-2x mb-2"></i>
+                                            <h6>Predicción</h6>
+                                            <p class="text-muted small">Letra reconocida</p>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="p-3">
-                                            <i class="fas fa-clock text-danger fa-2x mb-2"></i>
+                                            <i class="fas fa-tachometer-alt text-danger fa-2x mb-2"></i>
                                             <h6>Tiempo</h6>
-                                            <p class="text-muted small">~50ms</p>
+                                            <p class="text-muted small">Tiempo real</p>
                                         </div>
                                     </div>
                                     <div class="col-md-3">

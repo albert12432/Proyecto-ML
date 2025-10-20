@@ -1,22 +1,23 @@
-# Proyecto ML - Deducción de Imágenes
+# Proyecto ML - Reconocimiento de Lenguaje de Señas
 
-Sistema de Machine Learning basado en Redes Neuronales Convolucionales para análisis de imágenes y generación automática de comandos.
+Sistema de Machine Learning basado en Redes Neuronales Convolucionales para el reconocimiento y traducción de lenguaje de señas a texto mediante análisis de imágenes.
 
 ## Descripción
 
 Este proyecto implementa un sistema de visión artificial que utiliza Deep Learning para:
-- Analizar imágenes mediante CNN (Convolutional Neural Networks)
-- Clasificar imágenes en 20 categorías de comandos diferentes
-- Generar comandos ejecutables en tiempo real
-- Proporcionar una interfaz web intuitiva
+- Analizar imágenes de gestos de lenguaje de señas mediante CNN (Convolutional Neural Networks)
+- Reconocer y clasificar señas correspondientes a letras del alfabeto
+- Predecir letras en tiempo real desde cámara web o imágenes subidas
+- Proporcionar una interfaz web intuitiva para interactuar con el modelo
 
 ## Características
 
 - Sistema de autenticación con login y registro de usuarios
-- Dashboard interactivo con navegación entre módulos
-- Arquitectura CNN con 2.3M parámetros
-- Alta precisión de clasificación (94.2%)
-- Pipeline completo de Machine Learning
+- Dashboard interactivo con navegación entre módulos del proyecto
+- Carga de imágenes estáticas o captura en tiempo real desde webcam
+- Arquitectura CNN con 2.3M parámetros optimizada para reconocimiento de gestos
+- Alta precisión de clasificación (objetivo: >94%)
+- Pipeline completo de Machine Learning desde datos hasta despliegue
 
 ## Estructura del Proyecto
 
@@ -41,21 +42,25 @@ Proyecto-ML/
 ## Módulos del Sistema
 
 ### Fase 1: Entendimiento del Negocio
-- Objetivos y alcance del proyecto
-- Requerimientos funcionales y técnicos
-- Casos de uso y análisis de viabilidad
+- Objetivos: Sistema de traducción de lenguaje de señas a texto
+- Público objetivo: Personas con discapacidad auditiva y sus interlocutores
+- Casos de uso: Comunicación inclusiva, educación, accesibilidad
+- Análisis de viabilidad técnica y social
 
 ### Fase 2: Entendimiento e Ingeniería de Datos
-- Dataset de 50,000 imágenes
-- Pipeline de procesamiento y limpieza
-- Técnicas de Data Augmentation
+- Dataset de imágenes de señas del alfabeto (letras A-Z)
+- Recolección mediante cámara web y datasets públicos
+- Pipeline de procesamiento: normalización, redimensionamiento, augmentation
+- Técnicas de Data Augmentation: rotación, zoom, flip horizontal
 - División del dataset (70% entrenamiento, 15% validación, 15% prueba)
 
 ### Fase 3: Modelo de Redes Neuronales
-- Arquitectura CNN con capas convolucionales y pooling
-- Clasificación de 20 comandos diferentes
-- Interfaz de predicción en tiempo real
-- Visualización de resultados
+- Arquitectura CNN especializada en reconocimiento de gestos
+- Capas convolucionales para extracción de características de manos
+- Clasificación de 26 letras del alfabeto (A-Z) o más según el alcance
+- Predicción en tiempo real desde webcam
+- Carga de imágenes estáticas para predicción
+- Visualización de resultados con probabilidades por letra
 
 ## Tecnologías
 
@@ -65,11 +70,15 @@ Proyecto-ML/
 - MySQL
 - Flask-MySQLdb
 - Flask-Bcrypt
+- TensorFlow/Keras (para el modelo CNN)
+- OpenCV (procesamiento de imágenes)
+- NumPy, Pandas (manipulación de datos)
 
 **Frontend:**
 - HTML5, CSS3, JavaScript
 - Bootstrap 5.3.0
 - Font Awesome 6.0.0
+- Webcam.js (captura de video en tiempo real)
 
 ## Inicio Rápido
 
@@ -96,18 +105,32 @@ Acceder a: http://localhost:5000
 - Usuario: admin
 - Contraseña: admin123
 
-## Comandos Disponibles
+## Funcionalidades del Sistema
 
-El sistema puede identificar 20 comandos diferentes:
+### Reconocimiento de Señas
+El sistema puede reconocer gestos de lenguaje de señas y traducirlos a letras:
 
-MOVE_UP, MOVE_DOWN, MOVE_LEFT, MOVE_RIGHT, STOP, START, PAUSE, ROTATE, ZOOM_IN, ZOOM_OUT, CONFIRM, CANCEL, SAVE, DELETE, ADD, REMOVE, EDIT, VIEW, DOWNLOAD, UPLOAD
+**Modos de entrada:**
+- Carga de imagen estática (formatos: JPG, PNG)
+- Captura en tiempo real desde webcam
+
+**Proceso de predicción:**
+1. El usuario sube una imagen o activa la webcam
+2. La imagen se procesa y normaliza
+3. El modelo CNN analiza el gesto
+4. Se muestra la letra predicha con su nivel de confianza
+5. Historial de predicciones disponible
+
+**Alfabeto reconocible:**
+Letras A-Z del lenguaje de señas (26 clases o más según configuración)
 
 ## Estado del Proyecto
 
-- Fase 1: Diseño de vistas (Completado)
-- Fase 2: Desarrollo del modelo (En progreso)
-- Fase 3: Integración funcional (Pendiente)
-- Fase 4: Optimización y despliegue (Pendiente)
+- Fase 1: Diseño de vistas y arquitectura web (Completado)
+- Fase 2: Recolección y preparación del dataset de señas (En progreso)
+- Fase 3: Desarrollo y entrenamiento del modelo CNN (Pendiente)
+- Fase 4: Integración del modelo con la interfaz web (Pendiente)
+- Fase 5: Optimización y despliegue (Pendiente)
 
 ## Documentación
 

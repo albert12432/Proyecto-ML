@@ -20,7 +20,7 @@
     <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ url_for('home') }}">
-                <i class="fas fa-brain me-2"></i>Proyecto ML - Deducción de Imágenes
+                <i class="fas fa-hands me-2"></i>Proyecto ML - Reconocimiento de Señas
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -62,7 +62,7 @@
         <!-- Encabezado de la sección -->
         <div class="section-header">
             <h1><i class="fas fa-briefcase me-3"></i>Entendimiento del Negocio</h1>
-            <p class="mb-0">Definición de objetivos y requerimientos del proyecto de deducción de imágenes</p>
+            <p class="mb-0">Definición de objetivos del sistema de reconocimiento de lenguaje de señas</p>
         </div>
 
         <!-- Objetivos del Proyecto -->
@@ -75,14 +75,15 @@
                         </div>
                         <h3 class="card-title">Objetivos del Proyecto</h3>
                         <p class="card-text">
-                            Desarrollar un sistema de visión artificial basado en redes neuronales capaz de analizar imágenes 
-                            y deducir comandos específicos para automatizar procesos y mejorar la toma de decisiones.
+                            Desarrollar un sistema de visión artificial basado en redes neuronales convolucionales (CNN) capaz 
+                            de reconocer gestos del lenguaje de señas y traducirlos a texto en tiempo real, mejorando la comunicación 
+                            inclusiva y accesibilidad para personas con discapacidad auditiva.
                         </p>
                         <ul class="list-unstyled">
-                            <li><i class="fas fa-check-circle text-success me-2"></i>Identificar patrones visuales en imágenes</li>
-                            <li><i class="fas fa-check-circle text-success me-2"></i>Generar comandos automáticos basados en análisis</li>
-                            <li><i class="fas fa-check-circle text-success me-2"></i>Optimizar procesos de decisión operativa</li>
-                            <li><i class="fas fa-check-circle text-success me-2"></i>Reducir errores humanos en interpretación de imágenes</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Reconocer gestos del lenguaje de señas mediante imágenes</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Traducir señas a letras del alfabeto en tiempo real</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Facilitar la comunicación entre personas con y sin discapacidad auditiva</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Proporcionar una herramienta educativa para aprender lenguaje de señas</li>
                         </ul>
                     </div>
                 </div>
@@ -100,19 +101,19 @@
                         <h4 class="card-title">Requerimientos Funcionales</h4>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item border-0 ps-0">
-                                <i class="fas fa-angle-right text-primary me-2"></i>Carga de imágenes en múltiples formatos
+                                <i class="fas fa-angle-right text-primary me-2"></i>Carga de imágenes de gestos (JPG, PNG)
                             </li>
                             <li class="list-group-item border-0 ps-0">
-                                <i class="fas fa-angle-right text-primary me-2"></i>Procesamiento en tiempo real
+                                <i class="fas fa-angle-right text-primary me-2"></i>Captura en tiempo real desde webcam
                             </li>
                             <li class="list-group-item border-0 ps-0">
-                                <i class="fas fa-angle-right text-primary me-2"></i>Generación de comandos ejecutables
+                                <i class="fas fa-angle-right text-primary me-2"></i>Predicción de letras del alfabeto (A-Z)
                             </li>
                             <li class="list-group-item border-0 ps-0">
-                                <i class="fas fa-angle-right text-primary me-2"></i>Historial de predicciones
+                                <i class="fas fa-angle-right text-primary me-2"></i>Mostrar nivel de confianza de la predicción
                             </li>
                             <li class="list-group-item border-0 ps-0">
-                                <i class="fas fa-angle-right text-primary me-2"></i>Interfaz intuitiva para usuarios
+                                <i class="fas fa-angle-right text-primary me-2"></i>Interfaz web accesible e intuitiva
                             </li>
                         </ul>
                     </div>
@@ -128,19 +129,16 @@
                         <h4 class="card-title">Requerimientos Técnicos</h4>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item border-0 ps-0">
-                                <i class="fas fa-angle-right text-success me-2"></i>Precisión mínima del 85%
+                                <i class="fas fa-angle-right text-success me-2"></i>Precisión mínima del 90% en reconocimiento
                             </li>
                             <li class="list-group-item border-0 ps-0">
-                                <i class="fas fa-angle-right text-success me-2"></i>Tiempo de respuesta < 3 segundos
+                                <i class="fas fa-angle-right text-success me-2"></i>Tiempo de respuesta < 1 segundo
                             </li>
                             <li class="list-group-item border-0 ps-0">
-                                <i class="fas fa-angle-right text-success me-2"></i>Escalabilidad para múltiples usuarios
+                                <i class="fas fa-angle-right text-success me-2"></i>Compatible con navegadores modernos
                             </li>
                             <li class="list-group-item border-0 ps-0">
-                                <i class="fas fa-angle-right text-success me-2"></i>Seguridad en manejo de datos
-                            </li>
-                            <li class="list-group-item border-0 ps-0">
-                                <i class="fas fa-angle-right text-success me-2"></i>Integración con sistemas existentes
+                                <i class="fas fa-angle-right text-success me-2"></i>Funcionar con cámaras web estándar
                             </li>
                         </ul>
                     </div>
@@ -162,11 +160,11 @@
                                 <div class="card bg-light h-100">
                                     <div class="card-body">
                                         <h5 class="card-title">
-                                            <i class="fas fa-image text-primary me-2"></i>Análisis de Imágenes
+                                            <i class="fas fa-hand-paper text-primary me-2"></i>Comunicación Diaria
                                         </h5>
                                         <p class="card-text small">
-                                            Usuario carga una imagen y el sistema la analiza para identificar 
-                                            elementos clave y patrones relevantes.
+                                            Personas con discapacidad auditiva utilizan el sistema para comunicarse 
+                                            mostrando señas a la cámara y obteniendo la traducción en texto.
                                         </p>
                                     </div>
                                 </div>
@@ -175,11 +173,11 @@
                                 <div class="card bg-light h-100">
                                     <div class="card-body">
                                         <h5 class="card-title">
-                                            <i class="fas fa-terminal text-success me-2"></i>Generación de Comandos
+                                            <i class="fas fa-graduation-cap text-success me-2"></i>Aprendizaje de Señas
                                         </h5>
                                         <p class="card-text small">
-                                            El sistema interpreta la imagen y genera comandos específicos 
-                                            basados en el análisis realizado.
+                                            Estudiantes practican lenguaje de señas mostrando gestos y 
+                                            verificando si los realizan correctamente según la predicción.
                                         </p>
                                     </div>
                                 </div>
@@ -188,11 +186,11 @@
                                 <div class="card bg-light h-100">
                                     <div class="card-body">
                                         <h5 class="card-title">
-                                            <i class="fas fa-chart-line text-warning me-2"></i>Monitoreo de Resultados
+                                            <i class="fas fa-comments text-warning me-2"></i>Traducción en Vivo
                                         </h5>
                                         <p class="card-text small">
-                                            Usuarios revisan el historial de predicciones y evalúan 
-                                            la efectividad del sistema.
+                                            En reuniones o eventos, el sistema traduce señas en tiempo real 
+                                            facilitando la comunicación inclusiva.
                                         </p>
                                     </div>
                                 </div>
@@ -213,20 +211,20 @@
                         </h3>
                         <div class="row mt-3">
                             <div class="col-md-3 text-center mb-3">
-                                <div class="display-6 text-primary">85%+</div>
+                                <div class="display-6 text-primary">90%+</div>
                                 <p class="text-muted">Precisión del Modelo</p>
                             </div>
                             <div class="col-md-3 text-center mb-3">
-                                <div class="display-6 text-success">< 3s</div>
+                                <div class="display-6 text-success">< 1s</div>
                                 <p class="text-muted">Tiempo de Respuesta</p>
                             </div>
                             <div class="col-md-3 text-center mb-3">
-                                <div class="display-6 text-warning">100+</div>
-                                <p class="text-muted">Usuarios Concurrentes</p>
+                                <div class="display-6 text-warning">26</div>
+                                <p class="text-muted">Letras Reconocibles</p>
                             </div>
                             <div class="col-md-3 text-center mb-3">
-                                <div class="display-6 text-info">95%+</div>
-                                <p class="text-muted">Satisfacción Usuario</p>
+                                <div class="display-6 text-info">100%</div>
+                                <p class="text-muted">Accesibilidad</p>
                             </div>
                         </div>
                     </div>
