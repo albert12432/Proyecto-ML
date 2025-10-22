@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entendimiento del Negocio - Proyecto ML</title>
+    <meta name="description" content="Fase 1: Comprensión del negocio y objetivos del proyecto">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='logo.svg') }}">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     <!-- Estilos Personalizados -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}">
@@ -19,8 +23,9 @@
     <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ url_for('home') }}">
-                <i class="fas fa-hands me-2"></i>Proyecto ML - Reconocimiento de Señas
+            <a class="navbar-brand d-flex align-items-center" href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='logo.svg') }}" alt="ML Logo" width="32" height="32" class="me-2">
+                <span>Proyecto ML</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -28,29 +33,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('home') }}">
-                            <i class="fas fa-home me-1"></i>Inicio
-                        </a>
+                        <a class="nav-link" href="{{ url_for('home') }}">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ url_for('entendimiento_negocio') }}">
-                            <i class="fas fa-briefcase me-1"></i>Negocio
-                        </a>
+                        <a class="nav-link active" href="{{ url_for('entendimiento_negocio') }}">Negocio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('ingenieria_datos') }}">
-                            <i class="fas fa-database me-1"></i>Datos
-                        </a>
+                        <a class="nav-link" href="{{ url_for('ingenieria_datos') }}">Datos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('modelo_neural') }}">
-                            <i class="fas fa-project-diagram me-1"></i>Modelo
-                        </a>
+                        <a class="nav-link" href="{{ url_for('modelo_neural') }}">Modelo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('logout') }}">
-                            <i class="fas fa-sign-out-alt me-1"></i>Cerrar sesión
-                        </a>
+                        <a class="nav-link" href="{{ url_for('logout') }}">Cerrar sesión</a>
                     </li>
                 </ul>
             </div>
@@ -61,8 +56,8 @@
     <div class="container mt-4">
         <!-- Encabezado de la sección -->
         <div class="section-header">
-            <h1><i class="fas fa-briefcase me-3"></i>Entendimiento del Negocio</h1>
-            <p class="mb-0">Definición de objetivos del sistema de reconocimiento de lenguaje de señas</p>
+            <h1>Entendimiento del Negocio</h1>
+            <p>Definición de objetivos del sistema de reconocimiento de lenguaje de señas</p>
         </div>
 
         <!-- Objetivos del Proyecto -->
@@ -70,20 +65,20 @@
             <div class="col-12">
                 <div class="card card-custom">
                     <div class="card-body p-4">
-                        <div class="icon-box icon-box-purple">
-                            <i class="fas fa-bullseye"></i>
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="material-icons text-primary me-2" style="font-size: 32px;">flag</span>
+                            <h3 class="card-title mb-0">Objetivos del Proyecto</h3>
                         </div>
-                        <h3 class="card-title">Objetivos del Proyecto</h3>
                         <p class="card-text">
                             Desarrollar un sistema de visión artificial basado en redes neuronales convolucionales (CNN) capaz 
                             de reconocer gestos del lenguaje de señas y traducirlos a texto en tiempo real, mejorando la comunicación 
                             inclusiva y accesibilidad para personas con discapacidad auditiva.
                         </p>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-check-circle text-success me-2"></i>Reconocer gestos del lenguaje de señas mediante imágenes</li>
-                            <li><i class="fas fa-check-circle text-success me-2"></i>Traducir señas a letras del alfabeto en tiempo real</li>
-                            <li><i class="fas fa-check-circle text-success me-2"></i>Facilitar la comunicación entre personas con y sin discapacidad auditiva</li>
-                            <li><i class="fas fa-check-circle text-success me-2"></i>Proporcionar una herramienta educativa para aprender lenguaje de señas</li>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2"><span class="material-icons text-primary" style="font-size: 20px; vertical-align: middle;">check_circle</span> Reconocer gestos del lenguaje de señas mediante imágenes</li>
+                            <li class="mb-2"><span class="material-icons text-primary" style="font-size: 20px; vertical-align: middle;">check_circle</span> Traducir señas a letras del alfabeto en tiempo real</li>
+                            <li class="mb-2"><span class="material-icons text-primary" style="font-size: 20px; vertical-align: middle;">check_circle</span> Facilitar la comunicación entre personas con y sin discapacidad auditiva</li>
+                            <li class="mb-2"><span class="material-icons text-primary" style="font-size: 20px; vertical-align: middle;">check_circle</span> Proporcionar una herramienta educativa para aprender lenguaje de señas</li>
                         </ul>
                     </div>
                 </div>
@@ -95,26 +90,16 @@
             <div class="col-md-6 mb-3">
                 <div class="card card-custom">
                     <div class="card-body p-4">
-                        <div class="icon-box icon-box-blue">
-                            <i class="fas fa-clipboard-list"></i>
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="material-icons text-success me-2" style="font-size: 32px;">task_alt</span>
+                            <h4 class="card-title mb-0">Requerimientos Funcionales</h4>
                         </div>
-                        <h4 class="card-title">Requerimientos Funcionales</h4>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item border-0 ps-0">
-                                <i class="fas fa-angle-right text-primary me-2"></i>Carga de imágenes de gestos (JPG, PNG)
-                            </li>
-                            <li class="list-group-item border-0 ps-0">
-                                <i class="fas fa-angle-right text-primary me-2"></i>Captura en tiempo real desde webcam
-                            </li>
-                            <li class="list-group-item border-0 ps-0">
-                                <i class="fas fa-angle-right text-primary me-2"></i>Predicción de letras del alfabeto (A-Z)
-                            </li>
-                            <li class="list-group-item border-0 ps-0">
-                                <i class="fas fa-angle-right text-primary me-2"></i>Mostrar nivel de confianza de la predicción
-                            </li>
-                            <li class="list-group-item border-0 ps-0">
-                                <i class="fas fa-angle-right text-primary me-2"></i>Interfaz web accesible e intuitiva
-                            </li>
+                            <li class="list-group-item border-0 ps-0"><span class="material-icons text-success me-2" style="font-size: 18px; vertical-align: middle;">upload_file</span>Carga de imágenes de gestos (JPG, PNG)</li>
+                            <li class="list-group-item border-0 ps-0"><span class="material-icons text-success me-2" style="font-size: 18px; vertical-align: middle;">videocam</span>Captura en tiempo real desde webcam</li>
+                            <li class="list-group-item border-0 ps-0"><span class="material-icons text-success me-2" style="font-size: 18px; vertical-align: middle;">psychology</span>Predicción de letras del alfabeto (A-Z)</li>
+                            <li class="list-group-item border-0 ps-0"><span class="material-icons text-success me-2" style="font-size: 18px; vertical-align: middle;">analytics</span>Mostrar nivel de confianza de la predicción</li>
+                            <li class="list-group-item border-0 ps-0"><span class="material-icons text-success me-2" style="font-size: 18px; vertical-align: middle;">devices</span>Interfaz web accesible e intuitiva</li>
                         </ul>
                     </div>
                 </div>
@@ -123,23 +108,15 @@
             <div class="col-md-6 mb-3">
                 <div class="card card-custom">
                     <div class="card-body p-4">
-                        <div class="icon-box icon-box-green">
-                            <i class="fas fa-cogs"></i>
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="material-icons text-warning me-2" style="font-size: 32px;">engineering</span>
+                            <h4 class="card-title mb-0">Requerimientos Técnicos</h4>
                         </div>
-                        <h4 class="card-title">Requerimientos Técnicos</h4>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item border-0 ps-0">
-                                <i class="fas fa-angle-right text-success me-2"></i>Precisión mínima del 90% en reconocimiento
-                            </li>
-                            <li class="list-group-item border-0 ps-0">
-                                <i class="fas fa-angle-right text-success me-2"></i>Tiempo de respuesta < 1 segundo
-                            </li>
-                            <li class="list-group-item border-0 ps-0">
-                                <i class="fas fa-angle-right text-success me-2"></i>Compatible con navegadores modernos
-                            </li>
-                            <li class="list-group-item border-0 ps-0">
-                                <i class="fas fa-angle-right text-success me-2"></i>Funcionar con cámaras web estándar
-                            </li>
+                            <li class="list-group-item border-0 ps-0"><span class="material-icons text-warning me-2" style="font-size: 18px; vertical-align: middle;">verified</span>Precisión mínima del 90% en reconocimiento</li>
+                            <li class="list-group-item border-0 ps-0"><span class="material-icons text-warning me-2" style="font-size: 18px; vertical-align: middle;">speed</span>Tiempo de respuesta < 1 segundo</li>
+                            <li class="list-group-item border-0 ps-0"><span class="material-icons text-warning me-2" style="font-size: 18px; vertical-align: middle;">language</span>Compatible con navegadores modernos</li>
+                            <li class="list-group-item border-0 ps-0"><span class="material-icons text-warning me-2" style="font-size: 18px; vertical-align: middle;">camera_alt</span>Funcionar con cámaras web estándar</li>
                         </ul>
                     </div>
                 </div>
@@ -151,17 +128,18 @@
             <div class="col-12">
                 <div class="card card-custom">
                     <div class="card-body p-4">
-                        <div class="icon-box icon-box-orange">
-                            <i class="fas fa-users"></i>
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="material-icons text-info me-2" style="font-size: 32px;">groups</span>
+                            <h3 class="card-title mb-0">Casos de Uso Principales</h3>
                         </div>
-                        <h3 class="card-title">Casos de Uso Principales</h3>
                         <div class="row mt-3">
                             <div class="col-md-4 mb-3">
                                 <div class="card bg-light h-100">
                                     <div class="card-body">
-                                        <h5 class="card-title">
-                                            <i class="fas fa-hand-paper text-primary me-2"></i>Comunicación Diaria
-                                        </h5>
+                                        <div class="d-flex align-items-center mb-2">
+                                            <span class="material-icons text-primary me-2" style="font-size: 28px;">chat</span>
+                                            <h5 class="card-title mb-0">Comunicación Diaria</h5>
+                                        </div>
                                         <p class="card-text small">
                                             Personas con discapacidad auditiva utilizan el sistema para comunicarse 
                                             mostrando señas a la cámara y obteniendo la traducción en texto.
@@ -172,9 +150,10 @@
                             <div class="col-md-4 mb-3">
                                 <div class="card bg-light h-100">
                                     <div class="card-body">
-                                        <h5 class="card-title">
-                                            <i class="fas fa-graduation-cap text-success me-2"></i>Aprendizaje de Señas
-                                        </h5>
+                                        <div class="d-flex align-items-center mb-2">
+                                            <span class="material-icons text-success me-2" style="font-size: 28px;">school</span>
+                                            <h5 class="card-title mb-0">Aprendizaje de Señas</h5>
+                                        </div>
                                         <p class="card-text small">
                                             Estudiantes practican lenguaje de señas mostrando gestos y 
                                             verificando si los realizan correctamente según la predicción.
@@ -185,9 +164,10 @@
                             <div class="col-md-4 mb-3">
                                 <div class="card bg-light h-100">
                                     <div class="card-body">
-                                        <h5 class="card-title">
-                                            <i class="fas fa-comments text-warning me-2"></i>Traducción en Vivo
-                                        </h5>
+                                        <div class="d-flex align-items-center mb-2">
+                                            <span class="material-icons text-warning me-2" style="font-size: 28px;">translate</span>
+                                            <h5 class="card-title mb-0">Traducción en Vivo</h5>
+                                        </div>
                                         <p class="card-text small">
                                             En reuniones o eventos, el sistema traduce señas en tiempo real 
                                             facilitando la comunicación inclusiva.
@@ -206,23 +186,28 @@
             <div class="col-12">
                 <div class="card card-custom bg-light">
                     <div class="card-body p-4">
-                        <h3 class="card-title">
-                            <i class="fas fa-trophy text-warning me-2"></i>Métricas de Éxito
-                        </h3>
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="material-icons text-danger me-2" style="font-size: 32px;">insights</span>
+                            <h3 class="card-title mb-0">Métricas de Éxito</h3>
+                        </div>
                         <div class="row mt-3">
                             <div class="col-md-3 text-center mb-3">
+                                <span class="material-icons text-primary mb-2" style="font-size: 48px;">verified</span>
                                 <div class="display-6 text-primary">90%+</div>
                                 <p class="text-muted">Precisión del Modelo</p>
                             </div>
                             <div class="col-md-3 text-center mb-3">
+                                <span class="material-icons text-success mb-2" style="font-size: 48px;">timer</span>
                                 <div class="display-6 text-success">< 1s</div>
                                 <p class="text-muted">Tiempo de Respuesta</p>
                             </div>
                             <div class="col-md-3 text-center mb-3">
+                                <span class="material-icons text-warning mb-2" style="font-size: 48px;">abc</span>
                                 <div class="display-6 text-warning">26</div>
-                                <p class="text-muted">Letras Reconocibles</p>
+                                <p class="text-muted">Letras Reconocidas</p>
                             </div>
                             <div class="col-md-3 text-center mb-3">
+                                <span class="material-icons text-info mb-2" style="font-size: 48px;">accessibility_new</span>
                                 <div class="display-6 text-info">100%</div>
                                 <p class="text-muted">Accesibilidad</p>
                             </div>

@@ -1,44 +1,91 @@
 /* ============================================
    ESTILOS PARA ENTENDIMIENTO DEL NEGOCIO
+   Estilo Google Cloud - Colores neutros
    ============================================ */
 
 /* Header de Sección */
 .section-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 30px;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: transparent;
+    color: var(--text-primary);
+    padding: 32px 0;
+    margin-bottom: 32px;
+    border-bottom: 1px solid var(--border);
 }
 
 .section-header h1 {
-    font-weight: 600;
-    margin-bottom: 10px;
+    font-family: 'Google Sans', sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    margin-bottom: 8px;
+    color: var(--text-primary);
 }
 
-.section-header p {
-    margin-bottom: 0;
-    opacity: 0.95;
+.section-header p { 
+    margin-bottom: 0; 
+    color: var(--text-secondary);
+    font-size: 16px;
 }
 
 /* Listas con Iconos */
 .list-unstyled li {
-    padding: 8px 0;
+    padding: 10px 0;
+    font-size: 14px;
+    color: var(--text-primary);
 }
 
-/* Tarjetas de Casos de Uso */
+/* Tarjetas - Estilo Google Cloud neutral */
+.card-custom {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-custom:hover {
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 2px 6px 2px rgba(60, 64, 67, 0.15);
+}
+
 .card.bg-light {
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
+    background-color: #f8f9fa !important;
+    border: 1px solid var(--border);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card.bg-light:hover {
-    border-color: #667eea;
-    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.2);
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 2px 6px 2px rgba(60, 64, 67, 0.15);
 }
 
-/* Métricas de Éxito */
+/* Métricas de Éxito - Colores neutros */
 .display-6 {
-    font-weight: 700;
+    font-weight: 500;
+    font-family: 'Google Sans', sans-serif;
+}
+
+/* Iconos con colores Google Cloud */
+.material-icons.text-primary {
+    color: #1a73e8 !important;
+}
+
+.material-icons.text-success {
+    color: #1e8e3e !important;
+}
+
+.material-icons.text-warning {
+    color: #f9ab00 !important;
+}
+
+.material-icons.text-info {
+    color: #5f6368 !important;
+}
+
+.material-icons.text-danger {
+    color: #d93025 !important;
+}
+
+/* Cards de título con iconos */
+.card-title {
+    font-family: 'Google Sans', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--text-primary);
 }

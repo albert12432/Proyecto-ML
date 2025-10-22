@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="brainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a73e8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1765cc;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Cerebro estilizado para IA -->
+  <circle cx="50" cy="50" r="45" fill="url(#brainGradient)" opacity="0.1"/>
+  <path d="M 30 35 Q 25 40 25 45 Q 25 50 30 52 Q 28 55 30 58 Q 32 62 38 62 Q 40 65 45 65 Q 50 65 52 62 Q 58 62 60 58 Q 62 55 60 52 Q 65 50 65 45 Q 65 40 60 35 Q 58 30 52 30 Q 50 27 45 27 Q 40 27 38 30 Q 32 30 30 35 Z" 
+        fill="url(#brainGradient)" stroke="#1765cc" stroke-width="1.5"/>
+  
+  <!-- Nodos de red neuronal -->
+  <circle cx="30" cy="45" r="3" fill="#ffffff"/>
+  <circle cx="45" cy="40" r="3" fill="#ffffff"/>
+  <circle cx="60" cy="45" r="3" fill="#ffffff"/>
+  <circle cx="45" cy="55" r="3" fill="#ffffff"/>
+  
+  <!-- Conexiones -->
+  <line x1="30" y1="45" x2="45" y2="40" stroke="#ffffff" stroke-width="1" opacity="0.6"/>
+  <line x1="45" y1="40" x2="60" y2="45" stroke="#ffffff" stroke-width="1" opacity="0.6"/>
+  <line x1="30" y1="45" x2="45" y2="55" stroke="#ffffff" stroke-width="1" opacity="0.6"/>
+  <line x1="60" y1="45" x2="45" y2="55" stroke="#ffffff" stroke-width="1" opacity="0.6"/>
+  
+  <!-- Letra "ML" minimalista -->
+  <text x="50" y="82" font-family="'Google Sans', sans-serif" font-size="16" font-weight="700" fill="#1a73e8" text-anchor="middle">ML</text>
+</svg>

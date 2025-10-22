@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingeniería de Datos - Proyecto ML</title>
+    <meta name="description" content="Fase 2: Preparación y transformación de datos para el modelo">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='logo.svg') }}">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     <!-- Estilos Personalizados -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}">
@@ -19,8 +23,9 @@
     <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ url_for('home') }}">
-                <i class="fas fa-hands me-2"></i>Proyecto ML - Reconocimiento de Señas
+            <a class="navbar-brand d-flex align-items-center" href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='logo.svg') }}" alt="ML Logo" width="32" height="32" class="me-2">
+                <span>Proyecto ML</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -28,29 +33,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('home') }}">
-                            <i class="fas fa-home me-1"></i>Inicio
-                        </a>
+                        <a class="nav-link" href="{{ url_for('home') }}">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('entendimiento_negocio') }}">
-                            <i class="fas fa-briefcase me-1"></i>Negocio
-                        </a>
+                        <a class="nav-link" href="{{ url_for('entendimiento_negocio') }}">Negocio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ url_for('ingenieria_datos') }}">
-                            <i class="fas fa-database me-1"></i>Datos
-                        </a>
+                        <a class="nav-link active" href="{{ url_for('ingenieria_datos') }}">Datos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('modelo_neural') }}">
-                            <i class="fas fa-project-diagram me-1"></i>Modelo
-                        </a>
+                        <a class="nav-link" href="{{ url_for('modelo_neural') }}">Modelo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('logout') }}">
-                            <i class="fas fa-sign-out-alt me-1"></i>Cerrar sesión
-                        </a>
+                        <a class="nav-link" href="{{ url_for('logout') }}">Cerrar sesión</a>
                     </li>
                 </ul>
             </div>
@@ -61,8 +56,8 @@
     <div class="container mt-4">
         <!-- Encabezado de la sección -->
         <div class="section-header">
-            <h1><i class="fas fa-database me-3"></i>Entendimiento de Datos e Ingeniería de Datos</h1>
-            <p class="mb-0">Recolección y preparación del dataset de imágenes de lenguaje de señas</p>
+            <h1>Ingeniería de Datos</h1>
+            <p>Recolección y preparación del dataset de imágenes de lenguaje de señas</p>
         </div>
 
         <!-- Recolección de Datos -->
@@ -70,15 +65,15 @@
             <div class="col-12">
                 <div class="card card-custom">
                     <div class="card-body p-4">
-                        <div class="icon-box icon-box-teal">
-                            <i class="fas fa-hand-rock"></i>
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="material-icons text-primary me-2" style="font-size: 32px;">cloud_upload</span>
+                            <h3 class="card-title mb-0">Fuentes de Datos</h3>
                         </div>
-                        <h3 class="card-title">Fuentes de Datos</h3>
                         <div class="row mt-3">
                             <div class="col-md-3 mb-3">
                                 <div class="card bg-light text-center h-100">
                                     <div class="card-body">
-                                        <i class="fas fa-video fa-3x text-primary mb-3"></i>
+                                        <span class="material-icons text-primary mb-2" style="font-size: 48px;">videocam</span>
                                         <h5>Captura Webcam</h5>
                                         <p class="small text-muted">Imágenes desde cámara web</p>
                                     </div>
@@ -87,7 +82,7 @@
                             <div class="col-md-3 mb-3">
                                 <div class="card bg-light text-center h-100">
                                     <div class="card-body">
-                                        <i class="fas fa-database fa-3x text-success mb-3"></i>
+                                        <span class="material-icons text-success mb-2" style="font-size: 48px;">folder_open</span>
                                         <h5>Datasets Públicos</h5>
                                         <p class="small text-muted">ASL Alphabet, Sign Language MNIST</p>
                                     </div>
@@ -96,7 +91,7 @@
                             <div class="col-md-3 mb-3">
                                 <div class="card bg-light text-center h-100">
                                     <div class="card-body">
-                                        <i class="fas fa-users fa-3x text-warning mb-3"></i>
+                                        <span class="material-icons text-warning mb-2" style="font-size: 48px;">diversity_3</span>
                                         <h5>Colaboradores</h5>
                                         <p class="small text-muted">Voluntarios con señas auténticas</p>
                                     </div>
@@ -105,7 +100,7 @@
                             <div class="col-md-3 mb-3">
                                 <div class="card bg-light text-center h-100">
                                     <div class="card-body">
-                                        <i class="fas fa-magic fa-3x text-info mb-3"></i>
+                                        <span class="material-icons text-info mb-2" style="font-size: 48px;">auto_awesome</span>
                                         <h5>Data Augmentation</h5>
                                         <p class="small text-muted">Rotación, zoom, flip</p>
                                     </div>
@@ -122,30 +117,30 @@
             <div class="col-md-6 mb-3">
                 <div class="card card-custom">
                     <div class="card-body p-4">
-                        <div class="icon-box icon-box-cyan">
-                            <i class="fas fa-chart-pie"></i>
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="material-icons text-success me-2" style="font-size: 32px;">dataset</span>
+                            <h4 class="card-title mb-0">Características del Dataset</h4>
                         </div>
-                        <h4 class="card-title">Características del Dataset</h4>
                         <table class="table table-sm mt-3">
                             <tbody>
                                 <tr>
-                                    <td><i class="fas fa-images text-primary me-2"></i>Total de Imágenes:</td>
+                                    <td><span class="material-icons text-primary me-2" style="font-size: 20px; vertical-align: middle;">image</span>Total de Imágenes:</td>
                                     <td class="text-end"><strong>50,000+</strong></td>
                                 </tr>
                                 <tr>
-                                    <td><i class="fas fa-tags text-success me-2"></i>Clases / Categorías:</td>
+                                    <td><span class="material-icons text-success me-2" style="font-size: 20px; vertical-align: middle;">category</span>Clases / Categorías:</td>
                                     <td class="text-end"><strong>20</strong></td>
                                 </tr>
                                 <tr>
-                                    <td><i class="fas fa-expand text-warning me-2"></i>Resolución Promedio:</td>
+                                    <td><span class="material-icons text-warning me-2" style="font-size: 20px; vertical-align: middle;">aspect_ratio</span>Resolución Promedio:</td>
                                     <td class="text-end"><strong>224x224 px</strong></td>
                                 </tr>
                                 <tr>
-                                    <td><i class="fas fa-palette text-info me-2"></i>Formato:</td>
+                                    <td><span class="material-icons text-info me-2" style="font-size: 20px; vertical-align: middle;">photo_library</span>Formato:</td>
                                     <td class="text-end"><strong>JPG, PNG</strong></td>
                                 </tr>
                                 <tr>
-                                    <td><i class="fas fa-hdd text-danger me-2"></i>Tamaño Total:</td>
+                                    <td><span class="material-icons text-danger me-2" style="font-size: 20px; vertical-align: middle;">storage</span>Tamaño Total:</td>
                                     <td class="text-end"><strong>15 GB</strong></td>
                                 </tr>
                             </tbody>
@@ -157,14 +152,14 @@
             <div class="col-md-6 mb-3">
                 <div class="card card-custom">
                     <div class="card-body p-4">
-                        <div class="icon-box icon-box-lime">
-                            <i class="fas fa-check-double"></i>
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="material-icons text-warning me-2" style="font-size: 32px;">high_quality</span>
+                            <h4 class="card-title mb-0">Calidad de Datos</h4>
                         </div>
-                        <h4 class="card-title">Calidad de Datos</h4>
                         <div class="mt-3">
                             <div class="mb-3">
                                 <div class="d-flex justify-content-between mb-1">
-                                    <span>Completitud</span>
+                                    <span><span class="material-icons text-primary me-1" style="font-size: 18px; vertical-align: middle;">check_circle</span>Completitud</span>
                                     <span class="fw-bold">95%</span>
                                 </div>
                                 <div class="progress">
@@ -173,7 +168,7 @@
                             </div>
                             <div class="mb-3">
                                 <div class="d-flex justify-content-between mb-1">
-                                    <span>Consistencia</span>
+                                    <span><span class="material-icons text-success me-1" style="font-size: 18px; vertical-align: middle;">verified</span>Consistencia</span>
                                     <span class="fw-bold">92%</span>
                                 </div>
                                 <div class="progress">
@@ -182,7 +177,7 @@
                             </div>
                             <div class="mb-3">
                                 <div class="d-flex justify-content-between mb-1">
-                                    <span>Precisión</span>
+                                    <span><span class="material-icons text-warning me-1" style="font-size: 18px; vertical-align: middle;">gps_fixed</span>Precisión</span>
                                     <span class="fw-bold">88%</span>
                                 </div>
                                 <div class="progress">
@@ -191,7 +186,7 @@
                             </div>
                             <div class="mb-3">
                                 <div class="d-flex justify-content-between mb-1">
-                                    <span>Unicidad</span>
+                                    <span><span class="material-icons text-info me-1" style="font-size: 18px; vertical-align: middle;">fingerprint</span>Unicidad</span>
                                     <span class="fw-bold">97%</span>
                                 </div>
                                 <div class="progress">
@@ -209,47 +204,47 @@
             <div class="col-12">
                 <div class="card card-custom">
                     <div class="card-body p-4">
-                        <div class="icon-box icon-box-pink">
-                            <i class="fas fa-project-diagram"></i>
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="material-icons text-info me-2" style="font-size: 32px;">account_tree</span>
+                            <h3 class="card-title mb-0">Pipeline de Procesamiento de Datos</h3>
                         </div>
-                        <h3 class="card-title">Pipeline de Procesamiento de Datos</h3>
                         
                         <div class="mt-4">
                             <div class="pipeline-step">
-                                <h5><i class="fas fa-hand-paper text-primary me-2"></i>1. Recolección de Gestos</h5>
+                                <h5><span class="material-icons text-primary me-2" style="font-size: 24px; vertical-align: middle;">pan_tool</span>1. Recolección de Gestos</h5>
                                 <p class="mb-0 text-muted">Captura de imágenes de gestos del lenguaje de señas (A-Z)</p>
                             </div>
 
                             <div class="pipeline-step">
-                                <h5><i class="fas fa-broom text-success me-2"></i>2. Limpieza de Datos</h5>
+                                <h5><span class="material-icons text-danger me-2" style="font-size: 24px; vertical-align: middle;">cleaning_services</span>2. Limpieza de Datos</h5>
                                 <p class="mb-0 text-muted">
                                     Eliminación de imágenes borrosas, mal iluminadas o con gestos incorrectos
                                 </p>
                             </div>
 
                             <div class="pipeline-step">
-                                <h5><i class="fas fa-crop text-warning me-2"></i>3. Preprocesamiento</h5>
+                                <h5><span class="material-icons text-success me-2" style="font-size: 24px; vertical-align: middle;">tune</span>3. Preprocesamiento</h5>
                                 <p class="mb-0 text-muted">
                                     Redimensionamiento a 128x128px, normalización y conversión a escala de grises
                                 </p>
                             </div>
 
                             <div class="pipeline-step">
-                                <h5><i class="fas fa-magic text-info me-2"></i>4. Data Augmentation</h5>
+                                <h5><span class="material-icons text-warning me-2" style="font-size: 24px; vertical-align: middle;">auto_awesome</span>4. Data Augmentation</h5>
                                 <p class="mb-0 text-muted">
                                     Rotación, zoom, flip horizontal para aumentar la variabilidad del dataset
                                 </p>
                             </div>
 
                             <div class="pipeline-step">
-                                <h5><i class="fas fa-font text-danger me-2"></i>5. Etiquetado de Letras</h5>
+                                <h5><span class="material-icons text-info me-2" style="font-size: 24px; vertical-align: middle;">label</span>5. Etiquetado de Letras</h5>
                                 <p class="mb-0 text-muted">
                                     Asignación de letras (A-Z) correspondientes a cada gesto de seña
                                 </p>
                             </div>
 
                             <div class="pipeline-step">
-                                <h5><i class="fas fa-divide text-secondary me-2"></i>6. División del Dataset</h5>
+                                <h5><span class="material-icons text-primary me-2" style="font-size: 24px; vertical-align: middle;">call_split</span>6. División del Dataset</h5>
                                 <p class="mb-0 text-muted">
                                     Separación en conjuntos de entrenamiento (70%), validación (15%) y prueba (15%)
                                 </p>
@@ -265,7 +260,7 @@
             <div class="col-md-4 mb-3">
                 <div class="card card-custom bg-primary text-white">
                     <div class="card-body text-center">
-                        <i class="fas fa-adjust fa-3x mb-3"></i>
+                        <span class="material-icons mb-2" style="font-size: 48px;">straighten</span>
                         <h5 class="card-title">Normalización</h5>
                         <p class="card-text small">
                             Escalado de valores de píxeles al rango [0,1] o [-1,1]
@@ -276,7 +271,7 @@
             <div class="col-md-4 mb-3">
                 <div class="card card-custom bg-success text-white">
                     <div class="card-body text-center">
-                        <i class="fas fa-layer-group fa-3x mb-3"></i>
+                        <span class="material-icons mb-2" style="font-size: 48px;">auto_fix_high</span>
                         <h5 class="card-title">Feature Extraction</h5>
                         <p class="card-text small">
                             Extracción de características visuales relevantes
@@ -287,7 +282,7 @@
             <div class="col-md-4 mb-3">
                 <div class="card card-custom bg-warning text-white">
                     <div class="card-body text-center">
-                        <i class="fas fa-balance-scale fa-3x mb-3"></i>
+                        <span class="material-icons mb-2" style="font-size: 48px;">balance</span>
                         <h5 class="card-title">Balanceo de Clases</h5>
                         <p class="card-text small">
                             Técnicas SMOTE y undersampling para equilibrar categorías
@@ -302,26 +297,31 @@
             <div class="col-12">
                 <div class="card card-custom bg-light">
                     <div class="card-body p-4">
-                        <h3 class="card-title">
-                            <i class="fas fa-chart-bar text-primary me-2"></i>Estadísticas del Dataset
-                        </h3>
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="material-icons text-danger me-2" style="font-size: 32px;">analytics</span>
+                            <h3 class="card-title mb-0">Estadísticas del Dataset</h3>
+                        </div>
                         <div class="row mt-3">
                             <div class="col-md-3 text-center mb-3">
+                                <span class="material-icons text-primary mb-2" style="font-size: 48px;">model_training</span>
                                 <div class="display-6 text-primary">70%</div>
                                 <p class="text-muted">Entrenamiento</p>
                                 <small>Dataset de training</small>
                             </div>
                             <div class="col-md-3 text-center mb-3">
+                                <span class="material-icons text-success mb-2" style="font-size: 48px;">verified</span>
                                 <div class="display-6 text-success">15%</div>
                                 <p class="text-muted">Validación</p>
                                 <small>Dataset de validation</small>
                             </div>
                             <div class="col-md-3 text-center mb-3">
+                                <span class="material-icons text-warning mb-2" style="font-size: 48px;">quiz</span>
                                 <div class="display-6 text-warning">15%</div>
                                 <p class="text-muted">Prueba</p>
                                 <small>Dataset de test</small>
                             </div>
                             <div class="col-md-3 text-center mb-3">
+                                <span class="material-icons text-info mb-2" style="font-size: 48px;">abc</span>
                                 <div class="display-6 text-info">26</div>
                                 <p class="text-muted">Letras</p>
                                 <small>A-Z del alfabeto</small>

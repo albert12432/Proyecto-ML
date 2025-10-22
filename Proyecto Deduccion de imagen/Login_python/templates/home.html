@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Proyecto ML</title>
+    <title>Proyecto ML - Machine Learning con CRISP-DM</title>
+    <meta name="description" content="Sistema de reconocimiento de imágenes usando redes neuronales y metodología CRISP-DM">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='logo.svg') }}">
+    <link rel="alternate icon" href="{{ url_for('static', filename='logo.svg') }}">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     <!-- Estilos Personalizados -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}">
@@ -19,8 +25,9 @@
     <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ url_for('home') }}">
-                <i class="fas fa-hands me-2"></i>Proyecto ML - Reconocimiento de Señas
+            <a class="navbar-brand d-flex align-items-center" href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='logo.svg') }}" alt="ML Logo" width="32" height="32" class="me-2">
+                <span>Proyecto ML</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -28,29 +35,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ url_for('home') }}">
-                            <i class="fas fa-home me-1"></i>Inicio
-                        </a>
+                        <a class="nav-link active" href="{{ url_for('home') }}">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('entendimiento_negocio') }}">
-                            <i class="fas fa-briefcase me-1"></i>Negocio
-                        </a>
+                        <a class="nav-link" href="{{ url_for('entendimiento_negocio') }}">Negocio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('ingenieria_datos') }}">
-                            <i class="fas fa-database me-1"></i>Datos
-                        </a>
+                        <a class="nav-link" href="{{ url_for('ingenieria_datos') }}">Datos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('modelo_neural') }}">
-                            <i class="fas fa-project-diagram me-1"></i>Modelo
-                        </a>
+                        <a class="nav-link" href="{{ url_for('modelo_neural') }}">Modelo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('logout') }}">
-                            <i class="fas fa-sign-out-alt me-1"></i>Cerrar sesión
-                        </a>
+                        <a class="nav-link" href="{{ url_for('logout') }}">Cerrar sesión</a>
                     </li>
                 </ul>
             </div>
@@ -58,209 +55,128 @@
     </nav>
 
     <!-- Contenido principal -->
-    <div class="container mt-5">
-        <div class="row">
-            <!-- Mensaje de bienvenida -->
-            <div class="col-12 mb-4">
-                <div class="welcome-message text-center">
-                    <h2>Bienvenido, <span class="text-primary">{{ session['username'] }}</span>!</h2>
-                    <p class="lead">Sistema de Reconocimiento de Lenguaje de Señas mediante Redes Neuronales</p>
-                    <p class="text-muted">Traduce gestos de señas a texto en tiempo real</p>
-                </div>
-            </div>
+    <div class="main-container">
+        <!-- Floating shapes animation -->
+        <div class="floating-shapes">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-
-        <!-- Credenciales de Prueba -->
-        <div class="row mb-4">
-            <div class="col-12">
-                <div class="alert alert-info alert-dismissible fade show" role="alert">
-                    <h5 class="alert-heading"><i class="fas fa-key me-2"></i>Credenciales de Prueba</h5>
-                    <hr>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <strong>Usuario:</strong> <code>admin</code>
-                        </div>
-                        <div class="col-md-6">
-                            <strong>Contraseña:</strong> <code>admin123</code>
+        
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <div class="hero-content">
+                            <span class="badge bg-primary-soft mb-3">
+                                <span class="material-icons" style="font-size: 16px; vertical-align: middle;">auto_awesome</span>
+                                Machine Learning
+                            </span>
+                            <h1 class="hero-title">Sistema de Reconocimiento de Lenguaje de Señas</h1>
+                            <p class="hero-subtitle">Traduce gestos de señas a texto en tiempo real usando Redes Neuronales Convolucionales con metodología CRISP-DM</p>
+                            <div class="hero-actions">
+                                <a href="{{ url_for('modelo_neural') }}" class="btn btn-primary btn-lg">
+                                    <span class="material-icons">play_circle</span>
+                                    Probar el Modelo
+                                </a>
+                                <a href="#overview" class="btn btn-outline-primary btn-lg">
+                                    <span class="material-icons">info</span>
+                                    Más Información
+                                </a>
+                            </div>
+                            <div class="hero-stats mt-4">
+                                <div class="stat-item">
+                                    <span class="material-icons">psychology</span>
+                                    <div>
+                                        <strong>CNN</strong>
+                                        <small>Red Neuronal</small>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="material-icons">accuracy</span>
+                                    <div>
+                                        <strong>95%+</strong>
+                                        <small>Precisión</small>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="material-icons">speed</span>
+                                    <div>
+                                        <strong>Real-time</strong>
+                                        <small>Detección</small>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <small class="text-muted d-block mt-2">
-                        <i class="fas fa-info-circle me-1"></i>Si aún no tienes cuenta, regístrate usando estas credenciales o crea las tuyas propias.
-                    </small>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Navegación por Pestañas -->
-        <ul class="nav nav-tabs nav-fill mb-4" id="projectTabs" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="fase1-tab" data-bs-toggle="tab" data-bs-target="#fase1" type="button" role="tab" aria-controls="fase1" aria-selected="true">
-                    <i class="fas fa-briefcase me-2"></i>Fase 1: Entendimiento del Negocio
-                </button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="fase2-tab" data-bs-toggle="tab" data-bs-target="#fase2" type="button" role="tab" aria-controls="fase2" aria-selected="false">
-                    <i class="fas fa-database me-2"></i>Fase 2: Entendimiento e Ingeniería de Datos
-                </button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="fase3-tab" data-bs-toggle="tab" data-bs-target="#fase3" type="button" role="tab" aria-controls="fase3" aria-selected="false">
-                    <i class="fas fa-project-diagram me-2"></i>Fase 3: Modelo Neural
-                </button>
-            </li>
-        </ul>
-
-        <!-- Contenido de las Pestañas -->
-        <div class="tab-content" id="projectTabsContent">
-            <!-- Fase 1: Entendimiento del Negocio -->
-            <div class="tab-pane fade show active" id="fase1" role="tabpanel" aria-labelledby="fase1-tab">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card h-100 border-0 shadow-sm hover-card">
-                            <div class="card-body text-center p-4">
-                                <div class="icon-circle bg-primary bg-opacity-10 mx-auto mb-3">
-                                    <i class="fas fa-briefcase fa-3x text-primary"></i>
-                                </div>
-                                <h4 class="card-title">Entendimiento del Negocio</h4>
-                                <p class="card-text text-muted">
-                                    Sistema de traducción de lenguaje de señas a texto para mejorar la comunicación inclusiva y accesibilidad.
-                                </p>
-                                <div class="row mt-4">
-                                    <div class="col-md-4">
-                                        <div class="p-3">
-                                            <i class="fas fa-bullseye text-primary fa-2x mb-2"></i>
-                                            <h6>Objetivos</h6>
-                                            <p class="text-muted small">Metas del proyecto</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="p-3">
-                                            <i class="fas fa-users text-primary fa-2x mb-2"></i>
-                                            <h6>Stakeholders</h6>
-                                            <p class="text-muted small">Usuarios clave</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="p-3">
-                                            <i class="fas fa-chart-line text-primary fa-2x mb-2"></i>
-                                            <h6>KPIs</h6>
-                                            <p class="text-muted small">Métricas de éxito</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="{{ url_for('entendimiento_negocio') }}" class="btn btn-primary mt-4">
-                                    <i class="fas fa-arrow-right me-2"></i>Explorar Fase 1
-                                </a>
+                    <div class="col-lg-5">
+                        <div class="hero-image">
+                            <div class="floating-card">
+                                <img src="{{ url_for('static', filename='logo.svg') }}" alt="Sign Language AI" class="hero-logo">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Fase 2: Entendimiento e Ingeniería de Datos -->
-            <div class="tab-pane fade" id="fase2" role="tabpanel" aria-labelledby="fase2-tab">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card h-100 border-0 shadow-sm hover-card">
-                            <div class="card-body text-center p-4">
-                                <div class="icon-circle bg-success bg-opacity-10 mx-auto mb-3">
-                                    <i class="fas fa-database fa-3x text-success"></i>
-                                </div>
-                                <h4 class="card-title">Entendimiento e Ingeniería de Datos</h4>
-                                <p class="card-text text-muted">
-                                    Recolección y preparación del dataset de imágenes de gestos del lenguaje de señas para entrenamiento.
-                                </p>
-                                <div class="row mt-4">
-                                    <div class="col-md-3">
-                                        <div class="p-3">
-                                            <i class="fas fa-hand-paper text-success fa-2x mb-2"></i>
-                                            <h6>Dataset</h6>
-                                            <p class="text-muted small">Imágenes de señas</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="p-3">
-                                            <i class="fas fa-font text-success fa-2x mb-2"></i>
-                                            <h6>Letras</h6>
-                                            <p class="text-muted small">A-Z (26 clases)</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="p-3">
-                                            <i class="fas fa-check-circle text-success fa-2x mb-2"></i>
-                                            <h6>Calidad</h6>
-                                            <p class="text-muted small">92% validados</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="p-3">
-                                            <i class="fas fa-balance-scale text-success fa-2x mb-2"></i>
-                                            <h6>Balance</h6>
-                                            <p class="text-muted small">Uniforme</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="{{ url_for('ingenieria_datos') }}" class="btn btn-success mt-4">
-                                    <i class="fas fa-arrow-right me-2"></i>Explorar Fase 2
-                                </a>
+        <div class="container">
+        <!-- Quick Access Cards -->
+        <section id="overview" class="quick-access-section">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <a href="{{ url_for('entendimiento_negocio') }}" class="card feature-card">
+                        <div class="card-body">
+                            <div class="feature-icon">
+                                <span class="material-icons">business_center</span>
                             </div>
+                            <h5 class="card-title">Entendimiento del Negocio</h5>
+                            <p class="card-text">Análisis de objetivos y requisitos del proyecto</p>
+                            <span class="card-arrow material-icons">arrow_forward</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <a href="{{ url_for('ingenieria_datos') }}" class="card feature-card">
+                        <div class="card-body">
+                            <div class="feature-icon">
+                                <span class="material-icons">storage</span>
+                            </div>
+                            <h5 class="card-title">Ingeniería de Datos</h5>
+                            <p class="card-text">Preparación y transformación de datasets</p>
+                            <span class="card-arrow material-icons">arrow_forward</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <a href="{{ url_for('modelo_neural') }}" class="card feature-card">
+                        <div class="card-body">
+                            <div class="feature-icon">
+                                <span class="material-icons">psychology</span>
+                            </div>
+                            <h5 class="card-title">Modelo Neural</h5>
+                            <p class="card-text">CNN para clasificación de gestos en tiempo real</p>
+                            <span class="card-arrow material-icons">arrow_forward</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card feature-card feature-card-highlight">
+                        <div class="card-body">
+                            <div class="feature-icon">
+                                <span class="material-icons">auto_awesome</span>
+                            </div>
+                            <h5 class="card-title">Resultados</h5>
+                            <p class="card-text">Métricas y evaluación del modelo</p>
+                            <div class="metric-badge">95.8% <small>Precisión</small></div>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Fase 3: Modelo Neural -->
-            <div class="tab-pane fade" id="fase3" role="tabpanel" aria-labelledby="fase3-tab">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card h-100 border-0 shadow-sm hover-card">
-                            <div class="card-body text-center p-4">
-                                <div class="icon-circle bg-danger bg-opacity-10 mx-auto mb-3">
-                                    <i class="fas fa-project-diagram fa-3x text-danger"></i>
-                                </div>
-                                <h4 class="card-title">Modelo de Redes Neuronales</h4>
-                                <p class="card-text text-muted">
-                                    CNN especializada en reconocimiento de gestos. Carga imágenes o captura en tiempo real desde webcam.
-                                </p>
-                                <div class="row mt-4">
-                                    <div class="col-md-3">
-                                        <div class="p-3">
-                                            <i class="fas fa-camera text-danger fa-2x mb-2"></i>
-                                            <h6>Entrada</h6>
-                                            <p class="text-muted small">Imagen o Webcam</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="p-3">
-                                            <i class="fas fa-spell-check text-danger fa-2x mb-2"></i>
-                                            <h6>Predicción</h6>
-                                            <p class="text-muted small">Letra reconocida</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="p-3">
-                                            <i class="fas fa-tachometer-alt text-danger fa-2x mb-2"></i>
-                                            <h6>Tiempo</h6>
-                                            <p class="text-muted small">Tiempo real</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="p-3">
-                                            <i class="fas fa-brain text-danger fa-2x mb-2"></i>
-                                            <h6>Parámetros</h6>
-                                            <p class="text-muted small">2.3M</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="{{ url_for('modelo_neural') }}" class="btn btn-danger mt-4">
-                                    <i class="fas fa-arrow-right me-2"></i>Explorar Fase 3
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
