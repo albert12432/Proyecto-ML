@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Administración</title>
+    <link rel="stylesheet" href="{% static 'css/administracion.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            
+            <img src="{% static 'css/lengua-senas.png' %}" alt="Logo lengua de señas">
+        </div>
+        <span class="perfil">👤</span>
+    </header>
+        <main>
+         <h2>Panel de Administración</h2>
+         <p>Seleccione una opción:</p>
+        <div class="botones">
+            <button onclick="location.href='{% url 'agregar_alumno' %}'">Agregar Alumno</button>
+            <button onclick="location.href='{% url 'lista_alumnos' %}'">Lista de Alumnos</button>
+        </div>
+    </main>
+
+   <footer>
+      <a href="{% url 'index' %}" class="btn-volver">VOLVER</a>
+    </footer>
+</body>
+</html>

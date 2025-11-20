@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Menú principal</title>
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            
+            <img src="{% static 'css/lengua-senas.png' %}" alt="Logo lengua de señas">
+        </div>
+        <span class="perfil">👤</span>
+    </header>
+
+    <main>
+        <p>¡BIENVENID@ {{ usuario.first_name|default:usuario.username }}!</p>
+        <div class="botones">
+            <button onclick="location.href='{% url 'entrenar' %}'">Entrenar</button>
+            <button onclick="location.href='{% url 'administracion' %}'">Administración</button>
+            <button onclick="location.href='{% url 'predecir' %}'">Predecir</button>
+        </div>
+    </main>
+
+    <footer>
+        <a href="{% url 'logout' %}">Cerrar sesión</a>
+    </footer>
+</body>
+</html>

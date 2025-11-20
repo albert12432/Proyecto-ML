@@ -1,0 +1,8 @@
+opencv-python>=4.5.0
+mediapipe>=0.10.0
+numpy>=2.0.0
+tensorflow>=2.15.0
+scikit-learn>=1.0.0
+pillow>=9.0.0
+django>=5.0.0
+flask>=3.0.0

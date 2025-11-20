@@ -1,0 +1,259 @@
+/* ======== GENERAL ======== */
+body {
+ font-family: 'Josefin Sans', sans-serif;
+  margin: 0;
+  display: flex;
+  background-color: #F4EBD3; 
+  height: 100vh;
+  color: #333;
+}
+
+
+/* ===== NAVBAR SUPERIOR ===== */
+.navbar {
+  background-color: #98A1BC;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+.titulo-navbar {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* ===== MENÚ LATERAL (HAMBURGUESA) ===== */
+.sidebar {
+  position: fixed;
+  left: -250px;
+  top: 60px;
+  width: 230px;
+  height: calc(100% - 60px);
+  background-color: #98A1BC;
+  transition: left 0.3s ease;
+  padding: 20px;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+.menu-content h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 15px;
+  color: #2d2d2d;
+}
+
+.menu-content a {
+  text-decoration: none;
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin: 5px 0;
+ 
+}
+
+.menu-content a:hover {
+  background-color: #8c8ce0;
+}
+
+.cerrar-sesion {
+background-color: #555879;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s;
+ 
+}
+
+/* ===== CONTENIDO ===== */
+.contenido {
+  margin-top: 80px;
+  padding: 20px;
+  background-color: #fff9e8;
+  min-height: calc(100vh - 80px);
+}
+
+
+/* ======== CONTENIDO PRINCIPAL ======== */
+.main-content {
+  flex-grow: 1;
+  padding: 30px 50px;
+  box-sizing: border-box;
+  background-color: #F4EBD3;
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  color: #3d3d3d;
+  margin-bottom: 30px;
+}
+
+/* ======== TABLA ======== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #DED3C4;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+th {
+  background-color: #c2b7f0;
+  color: #2f2f2f;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid #000000;
+}
+
+tr:nth-child(even) {
+  background-color: #DED3C4;
+}
+/* ======= ALERTA MODAL ======= */
+.alert-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.alert-box {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 400px;
+  font-size: 18px;
+}
+.alert-btn {
+  background-color: #64617b;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.alert-btn:hover {
+  background-color: #4c4a60;
+}
+
+/* ======== BOTONES ======== */
+a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.btn-volver {
+  display: inline-block;
+  background-color: #555879;
+  color: #fff !important;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 25px;
+  transition: background 0.3s;
+}
+
+.btn-volver:hover {
+  background-color: #8c8ce0;
+}
+.btn-elim{
+    display: inline-block;
+  background-color: #555879;  /* violeta gris oscuro */
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  vertical-align: middle; /* asegura que quede centrado */
+  margin: 0; /* elimina margen superior */
+  line-height: normal;
+}
+.btn-elim:hover {
+  background-color: #8c8ce0;
+} 
+
+/* ======== BOTÓN AGREGAR NUEVO ======== */
+.agregar-alumno {
+  display: inline-block;
+  background-color: #fff;
+  color: #555879;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin: 15px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.agregar-alumno:hover {
+  background-color: #f3f1ff;
+}

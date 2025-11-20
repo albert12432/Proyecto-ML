@@ -1,0 +1,91 @@
+/* ======= GENERAL ======= */
+body {
+    margin: 0;
+     font-family: 'Josefin Sans', sans-serif;
+    background-color: #f8f1dc; /* Fondo beige */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+/* ======= ENCABEZADO SUPERIOR ======= */
+header {
+    width: 100%;
+    height: 60px;
+    background-color: #98A1BC; /* violeta */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+header img {
+    height: 35px;
+}
+
+header .perfil {
+    font-size: 1.2rem;
+    color: #fff;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    opacity: 0.8;
+}
+
+/* ======= CONTENIDO PRINCIPAL ======= */
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+main p {
+    color: #333;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+main h2{
+    color: #333;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+.botones {
+    display: flex;
+    gap: 2rem;
+}
+
+button {
+    width: 180px;
+    height: 150px;
+    background-color: #d9d7d2;
+    border: 1px solid #bcb9b4;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    color: #444;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #cfcac2;
+    transform: scale(1.03);
+}
+
+/* ======= FOOTER ======= */
+footer {
+    text-align: center;
+    padding: 10px 0 20px 0;
+    color: #222;
+    font-size: 0.8rem;
+}
+footer a {
+    text-decoration: none;
+    color: #000;
+}
+footer a:hover {
+    text-decoration: underline;
+}

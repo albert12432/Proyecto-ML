@@ -1,0 +1,268 @@
+/* ======= GENERAL ======= */
+body {
+ font-family: 'Josefin Sans', sans-serif;
+  margin: 0;
+  display: flex;
+  background-color: #F4EBD3; 
+  height: 100vh;
+  color: #333;
+}
+
+/* ======= ENCABEZADO SUPERIOR ======= */
+header {
+  background-color: #98A1BC;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+header img {
+  height: 40px;
+  width: auto;
+}
+.titulo {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+/* ----- MENÚ izquierdo ----- */
+.sidebar {
+  position: fixed;
+  left: -250px;
+  top: 60px;
+  width: 230px;
+  height: calc(100% - 60px);
+  background-color: #98A1BC;
+  transition: left 0.3s ease;
+  padding: 20px;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.sidebar.active {
+  left: 0;
+}
+.menu-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+.menu-content h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 25px; /* más espacio arriba del título */
+  margin-bottom: 15px; /* espacio entre título y links */
+  color: #2d2d2d;
+}
+
+.menu-content a {
+  text-decoration: none;
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin: 5px 0;
+   margin: 10px 0; /* aumenta separación entre links */
+  padding: 10px 12px; /* espacio interno */
+}
+
+.menu-content a:hover {
+  background-color: #8c8ce0;
+}
+
+.cerrar-sesion {
+background-color: #555879;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s;
+ 
+}
+.btn-volver{
+background-color: #555879;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s;
+ 
+}
+
+/* ----- Botones del menu izquierdo ----- */
+a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+/* ----- FORMULARIO ----- */
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+  background-color: #f4ebd3;
+  font-family: 'Josefin Sans', sans-serif;
+   padding-top: 60px; /* baja todo el contenido debajo del header */
+
+  /* Mueve un poco a la derecha */
+  transform: translateX(400px); /* podés ajustar entre 80 y 120 */
+}
+
+.form-container {
+  background-color: transparent;
+  text-align: center;
+  width: 600px; /* más ancho */
+  padding: 50px 30px;
+}
+
+.form-container h2 {
+  font-size: 48px; /* más grande */
+  color: #3d3d3d;
+  font-weight: 400;
+  margin-bottom: 45px;
+  letter-spacing: 1px;
+  margin-top: 5px; /* reduce el espacio entre el paso-texto y el título */
+}
+
+form p {
+  text-align: left;
+  font-size: 18px;
+  color: #3a3a3a;
+  margin: 15px 0 8px 0;
+  font-weight: 500;
+}
+
+form input {
+  width: 100%;
+  padding: 16px 18px; /* más altos */
+  border: none;
+  border-radius: 12px;
+  background-color: #DED3C4;
+  color: #333;
+  font-size: 18px;
+  font-family: 'Josefin Sans', sans-serif;
+  transition: background-color 0.2s ease;
+}
+
+form input:focus {
+  outline: none;
+  background-color: #DED3C4;
+}
+
+form input::placeholder {
+  color: #8c837b;
+}
+
+/* ----- BOTÓN GUARDAR ----- */
+.btn-guardar {
+  margin-top: 50px;
+  background-color: #b0aebc; /* color inicial: formulario vacío */
+  color: white;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 12px;
+  font-size: 19px;
+  font-weight: 600;
+  cursor: not-allowed; /* indica que no se puede usar aún */
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  margin-left: 450px;
+}
+/* Hover solo cuando está activo */
+.btn-guardar:hover:enabled {
+  background-color: #4c4a60;
+  transform: translateY(-2px);
+}
+/* ----- ESTADO ACTIVO: formulario con datos válidos ----- */
+form:has(input:valid) .btn-guardar {
+  background-color: #64617b; /* color activo */
+  cursor: pointer;
+}
+
+
+/* ======= ALERTA MODAL ======= */
+.alert-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.alert-box {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 400px;
+  font-size: 18px;
+}
+
+.alert-box p {
+  margin-bottom: 25px;
+  font-weight: 600;
+  color: #333;
+}
+
+.alert-btn {
+  background-color: #64617b;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.alert-btn:hover {
+  background-color: #4c4a60;
+}
+/* ======= TEXTO DE PASO (USERFLOW) ======= */
+.paso-texto {
+  font-size: 15px;
+  font-weight: 200;
+  color: #555;
+  background-color: #ded3c4;
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}

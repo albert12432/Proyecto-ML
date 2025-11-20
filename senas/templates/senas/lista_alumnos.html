@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de alumnos</title>
+  <link rel="stylesheet" href="{% static 'css/lista_alumnos.css' %}">
+      <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <!-- ======= NAVBAR SUPERIOR ======= -->
+  <header class="navbar">
+    <div class="navbar-left">
+      <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+      <img src="{% static 'css/lengua-senas.png' %}" alt="Logo" class="logo">
+      <h1 class="titulo-navbar">Lengua de Señas</h1>
+    </div>
+  </header>
+
+  <!-- ======= MENÚ LATERAL (HAMBURGUESA) ======= -->
+  <nav id="sidebar" class="sidebar">
+    <h3>Entrenar</h3>
+    <a href="#">Abecedario</a>
+    <a href="#">Números</a>
+    <a href="#">Palabras</a>
+
+    <h3>Administración</h3>
+    <a href="{% url 'agregar_alumno' %}">Agregar alumno</a>
+    <a href="{% url 'lista_alumnos' %}">Lista de alumnos</a>
+    <a href="{% url 'logout' %}" class="cerrar-sesion">Cerrar sesión</a>
+
+
+
+  </nav>
+
+  <!-- ======= CONTENIDO PRINCIPAL ======= -->
+  <div class="main-content">
+    <h2>Lista de alumnos</h2>
+
+    <!-- Flowchart / modal de mensajes -->
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert-overlay">
+          <div class="alert-box">
+            <p>{{ message }}</p>
+            <form method="get">
+              <button type="submit" class="alert-btn">Aceptar</button>
+            </form>
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+
+    <!-- Tabla de alumnos -->
+    <table>
+      <tr>
+        <th>Nombre</th>
+        <th>Nombre de usuario</th>
+        <th>Contraseña</th>
+        <th>Eliminar</th>
+      </tr>
+      {% for alumno in alumnos %}
+      <tr class="table-row">
+        <td>{{ alumno.nombre }}</td>
+        <td>{{ alumno.username }}</td>
+        <td>{{ alumno.contrasena }}</td>
+        <td class="col-eliminar">
+          <a href="{% url 'eliminar_alumno' alumno.id %}" class="btn-elim" title="Eliminar este alumno">Eliminar</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    <a href="{% url 'index' %}" class="btn-volver">Volver</a>
+  </div>
+
+  <!-- ======= SCRIPT ======= -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const toggleBtn = document.getElementById("menu-toggle");
+      const sidebar = document.getElementById("sidebar");
+
+      toggleBtn.addEventListener("click", function() {
+        sidebar.classList.toggle("active");
+      });
+    });
+  </script>
+
+</body>
+</html>

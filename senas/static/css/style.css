@@ -1,0 +1,95 @@
+/* === General === */
+body {
+    background-color: #f5eedc; /* beige del fondo */
+     font-family: 'Josefin Sans', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+/* === Contenedor === */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+}
+
+/* === Logo === */
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.logo img {
+    width: 60px;
+}
+
+/* === Caja de login === */
+.login-box {
+    background-color: #8c94af; /* azul grisáceo */
+    border-radius: 20px;
+    padding: 40px 50px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* === Título === */
+.login-box h2 {
+    text-align: center;
+    color: #1e1e1e;
+    font-weight: 600;
+    margin-bottom: 25px;
+    font-size: 22px;
+}
+
+/* === Inputs === */
+label {
+    color: #1e1e1e;
+    font-size: 14px;
+    margin-top: 10px;
+    display: block;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: #e8dcc2;
+    margin-top: 6px;
+    font-size: 14px;
+    outline: none;
+}
+
+/* === Botón === */
+button {
+    width: 100%;
+    background-color: #35375b;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #2b2d49;
+}
+
+/* === Responsive === */
+@media (max-width: 500px) {
+    .login-box {
+        width: 90%;
+        padding: 30px;
+    }
+}
